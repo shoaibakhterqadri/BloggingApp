@@ -56,7 +56,7 @@ const DashboradArticle = () => {
             <div className="article-action-pagination">
                 <div className="numof-search-newAdd">
                     <div className="numof">
-                        <h2>Article (22)</h2>
+                        <h2>Articles ({allArticle.length})</h2>
                     </div>
                     <div className="searchOf">
                         <div className="search">
@@ -76,7 +76,15 @@ const DashboradArticle = () => {
                                     <img src={`http://localhost:3000/articalImage/${art.image}`} alt="article-image" />
                                     <Link to={`/artical/details/${art.slug}`}>{htmlToText(art.title.slice(0, 40))}</Link>
                                     {userInfo.role === 'admin' ? (
-                  <button onClick={() => handleStatusClick(art._id, art.status)} style={{backgroundColor:"red"}}>{art.status}</button>
+                  <button onClick={() => handleStatusClick(art._id, art.status)}  style={{
+                    backgroundColor: art.status === 'pending' ? 'red' : 'green',
+                    borderColor: art.status === 'pending' ? 'red' : 'green',
+                    color: 'white',
+                    borderRadius:"5px",
+                    fontWeight:"500",
+                    cursor:"pointer"
+                    
+                }}>{art.status.toUpperCase()}</button>
                 ) : (
                   <p>{art.status}</p>
                 )}

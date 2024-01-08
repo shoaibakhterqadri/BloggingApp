@@ -106,21 +106,20 @@ const Sidebar = () => {
                 <li>
                     <label htmlFor='user'>
                         <h3>
-                            <span><HiUserGroup /></span>
-                            <span>User</span>
-                        </h3>
-                        <span className='right_icon4'><BsChevronRight /></span>
-                    </label>
-                    <div className="user_category">
-                        <Link to='/dashborad/all-user'>
-                            <span><FaEye /></span>
-                            <span>All User</span>
-                        </Link>
                         <Link to='/dashborad/all-sub-admin'>
                             <span><FaEye/></span>
                             <span>All sub-admin</span>
                         </Link>
-                    </div>
+                        </h3>
+                        {/* <span className='right_icon4'><BsChevronRight /></span> */}
+                    </label>
+                    {/* <div className="user_category">
+                        
+                        <Link to='/dashborad/all-sub-admin'>
+                            <span><FaEye/></span>
+                            <span>All sub-admin</span>
+                        </Link>
+                    </div> */}
                 </li>
                 <li>
                     <Link to='/dashborad/comments'>

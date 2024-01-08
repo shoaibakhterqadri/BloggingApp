@@ -117,3 +117,27 @@ export const delete_article = (articleId)=>async(dispatch)=>{
         })
     }
 }
+
+export const update_article_status = (articleId, newStatus) => async (dispatch) => {
+    try {
+      const response = await axios.patch(
+        `http://localhost:5000/rest-api/update-article-status/${articleId}`,
+        { status: newStatus },
+        { withCredentials: true }
+      );
+  
+      dispatch({
+        type: 'ARTICLE_STATUS_UPDATE_SUCCESS',
+        payload: {
+          successMessage: response.data.successMessage,
+        },
+      });
+    } catch (error) {
+      dispatch({
+        type: 'ARTICLE_STATUS_UPDATE_FAIL',
+        payload: {
+          errorMessage: error.response.data.errorMessage,
+        },
+      });
+    }
+  };

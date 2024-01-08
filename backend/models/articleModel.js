@@ -38,6 +38,13 @@ const articleSchema = new Schema({
         type: String,
         required: true
     },
+    
+    status: {
+        type: String,
+        enum: ['published', 'pending', 'declined'],
+        default: 'pending',
+      },
+
     image: {
         type: String,
         required: true

@@ -13,16 +13,28 @@ const HomeArtical = () => {
 
     useEffect(() => {
         dispatch(get_all_article(currentPage ? currentPage.split('-')[1] : 1, ""));
-
     }, [currentPage])
+    
+
+      const publishedArticles = allArticle.filter(
+        (article) => article.status === 'published'
+      );
+
     return (
         <>
             <div className="home-articals">
-                {
-                    allArticle.length > 0 ? allArticle.map((art, index) =>
+            {publishedArticles.length > 0 ? (
+          publishedArticles.map((art, index) => (
+            <Article key={index} art={art} />
+          ))
+        ) : (
+          <h3>Article not found</h3>
+        )}
+                {/* {
+                    allArticle.length > 0 ?  allArticle.map((art, index) =>
                         <Article key={index} art={art} />
                     ) : <h3>Article not found</h3>
-                }
+                } */}
             </div>
             {
                 parPage < countArticle ?

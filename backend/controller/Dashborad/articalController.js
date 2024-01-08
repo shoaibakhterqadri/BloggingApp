@@ -53,6 +53,7 @@ module.exports.add_artical = (req, res) => {
                                 adminName,
                                 title,
                                 slug,
+                                status: 'pending',
                                 category: categoryName,
                                 category_slug: category,
                                 tag: tagName,

@@ -1,5 +1,5 @@
 import axios from 'axios'
-export const get_all_article = (currentPage, searchValue) => async (dispatch) => {
+export const get_all_article = (currentPage, searchValue, activeOnly = true) => async (dispatch) => {
     try {
         const response = await axios.get(`http://localhost:5000/rest-api/home-article-get?currentPage=${currentPage}&&searchValue=${searchValue}`, { withCredentials: true });
         dispatch({

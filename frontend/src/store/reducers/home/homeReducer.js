@@ -9,7 +9,8 @@ const initState = {
     related_article: [],
     readMore: "",
     read_article: '',
-    moreTag: []
+    moreTag: [],
+    status:""
 }
 
 export const homeReducer = (state = initState, action) => {

@@ -9,12 +9,13 @@ import { useSelector, useDispatch } from "react-redux";
 import Pagination from '../home/Pagination';
 import toast, { Toaster } from "react-hot-toast";
 
-import { get_all_article, delete_article } from "../../store/actions/Dashborad/articalAction";
+import { get_all_article, delete_article,update_article_status } from "../../store/actions/Dashborad/articalAction";
 
 const DashboradArticle = () => {
 
     const dispatch = useDispatch();
     const { allArticle, parPage, articleCount, articleSuccessMessage } = useSelector(state => state.dashboradArtical)
+    const { userInfo } = useSelector((state) => state.adminReducer);
 
     const { currentPage } = useParams();
 
@@ -29,6 +30,14 @@ const DashboradArticle = () => {
             dispatch(get_all_article(currentPage ? currentPage.split('-')[1] : 1, ''))
         }
     }, [dispatch, articleSuccessMessage])
+
+    const handleStatusClick = (articleId, currentStatus) => {
+        // Add logic to update the status based on the currentStatus
+        const newStatus = currentStatus === 'pending' ? 'published' : 'pending';
+        dispatch(update_article_status(articleId, newStatus));
+      };
+      console.log(userInfo.role);
+
     return (
         <div className='dashborad-article'>
             <Helmet>
@@ -61,13 +70,16 @@ const DashboradArticle = () => {
                 </div>
                 <div className="height-70vh">
                     <div className="articles">
-{
-                        console.log(allArticle)}
                         {
                             allArticle.length > 0 ? allArticle.map((art, index) =>
-                                <div className="article">
+                                <div className="article" key={index}>
                                     <img src={`http://localhost:3000/articalImage/${art.image}`} alt="article-image" />
                                     <Link to={`/artical/details/${art.slug}`}>{htmlToText(art.title.slice(0, 40))}</Link>
+                                    {userInfo.role === 'admin' ? (
+                  <button onClick={() => handleStatusClick(art._id, art.status)} style={{backgroundColor:"red"}}>{art.status}</button>
+                ) : (
+                  <p>{art.status}</p>
+                )}
                                     {/* <p>{htmlToText(art.articleText.slice(0, 50))}</p> */}
                                     <div className="action">
                                         <span>

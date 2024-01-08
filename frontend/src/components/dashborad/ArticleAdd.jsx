@@ -29,17 +29,6 @@ const ArticleAdd = ({history}) => {
         img: ''
     })
 
-    
-
-
-
-//         try{
-// console.log(url_of_serpstack);
-//         }
-//         catch(error){
-// console.log(error);
-//         }
-
 
     const inputHendle = (e) => {
         setState({
@@ -94,25 +83,23 @@ const ArticleAdd = ({history}) => {
     const add = async (e) => {
         e.preventDefault();
 
-        // Perform plagiarism check using Google Custom Search API
-        const apiKey = "AIzaSyCE6QKnae7KqrR0n6oRBcak04LlGejw1EU";
-        console.log(apiKey);
+        // const apiKey = "AIzaSyCE6QKnae7KqrR0n6oRBcak04LlGejw1EU";
+        // console.log(apiKey);
 
-        // const searchQuery = (text.replace(/<\/?[^>]+(>|$)/g, "").replace(/&nbsp;/g, " "));
-        const searchQuery="Engineer Shoaib Akhter Qadri"
-        console.log("searchQuery "+searchQuery);
+        // const searchQuery="Engineer Shoaib Akhter Qadri"
+        // console.log("searchQuery "+searchQuery);
         // const searchQuery = encodeURIComponent(text.replace(/<\/?[^>]+(>|$)/g, ""));
-const apiUrl = `https://www.googleapis.com/customsearch/v1?q=${searchQuery}&key=${apiKey}`;
+// const apiUrl = `https://www.googleapis.com/customsearch/v1?q=${searchQuery}&key=${apiKey}`;
 
         // const searchQuery = text.replace(/<\/?[^>]+(>|$)/g, "");
-        console.log("API URL is " +apiUrl);
+        // console.log("API URL is " +apiUrl);
 
         try {
             const response = await fetch(apiUrl);
             console.log(response);
             const data = await response.json();
             console.log(data);
-            // Check if the article text is found in the search results
+
             if (data.items && data.items.length > 0) {
                 toast.error('Plagiarism detected! Article cannot be published.');
                 alert("Plagiarism");
@@ -133,13 +120,9 @@ const apiUrl = `https://www.googleapis.com/customsearch/v1?q=${searchQuery}&key=
             dispatch(add_articale(formData));
         } catch (error) {
             console.error('Error:', error);
-            alert("fsdfsa")
             toast.error('Error checking plagiarism. Please try again.');
         }
     };
-
-
-
 
     const config = {
         readonly: false
@@ -256,7 +239,7 @@ const apiUrl = `https://www.googleapis.com/customsearch/v1?q=${searchQuery}&key=
                         </div>
                         <div className="image">
                             {
-                                image.img ? <img src={image.img} alt="" /> : ''
+                                image.img ? <img src={image.img} alt="" width={100} height={100} /> : ''
                             }
 
                         </div>

@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const mongoose = require('mongoose');
 const userModel = require('../../models/userModel');
+const articleModel = require('../../models/articleModel'); 
 
 
 const { category_add, category_get, category_delete, category_edit, category_update } = require('../../controller/Dashborad/categoryController');
@@ -74,36 +75,6 @@ res.status(200).json({
   }
 })
 
-
-// router.put('/block-unblock-sub-admin/:subAdminId', async (req, res) => {
-//   const { subAdminId } = req.params;
-//   const { accessStatus } = req.body;
-
-//   try {
-//     // Assuming you have a User model
-//     const subAdmin = await userModel.findById(mongoose.Types.ObjectId(subAdminId));
-
-//     if (!subAdmin) {
-//       return res.status(404).json({ error: 'Sub-admin not found' });
-//     }
-
-//     // Toggle the accessStatus
-//     subAdmin.accessStatus = accessStatus === 'unblock' ? 'block' : 'unblock';
-
-//     await subAdmin.save();
-
-//     res.status(200).json({
-//       message: `Access status of Sub-admin toggled successfully`,
-//       accessStatus: subAdmin.accessStatus,
-//     });
-//   } catch (error) {
-//     console.error(error);
-//     res.status(500).json({
-//       error: 'Internal server error',
-//     });
-//   }
-// });
-
 router.put('/update-sub-admin-access/:subAdminId', async (req, res) => {
   const { subAdminId } = req.params;
   const { accessStatus } = req.body;
@@ -116,6 +87,94 @@ router.put('/update-sub-admin-access/:subAdminId', async (req, res) => {
     res.status(500).json({ error: 'Internal server error' });
   }
 });
+
+
+router.patch('/update-article-status/:articleId', async (req, res) => {
+  const { articleId } = req.params;
+  const { status } = req.body;
+
+  try {
+    // Assuming you have a valid status, you might want to add additional validation
+    const validStatuses = ['published', 'pending', 'declined'];
+    if (!validStatuses.includes(status)) {
+      return res.status(400).json({ errorMessage: 'Invalid status provided' });
+    }
+
+    // Find the article by ID and update the status
+    const updatedArticle = await articleModel.findByIdAndUpdate(
+      articleId,
+      { status },
+      { new: true }
+    );
+
+    if (!updatedArticle) {
+      return res.status(404).json({ errorMessage: 'Article not found' });
+    }
+
+    res.status(200).json({ successMessage: 'Article status updated successfully' });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ errorMessage: 'Internal server error' });
+  }
+});
+
+
+// const get_pending_articals = async (req, res) => {
+//     try {
+//         const pendingArticals = await articleModel.find({ status: 'pending' });
+//         res.status(200).json({ pendingArticals });
+//     } catch (error) {
+//         res.status(500).json({
+//             errorMessage: {
+//                 error: 'Internal server error',
+//             }
+//         });
+//     }
+// }
+
+// router.get('/get-pending-articals', admin_middleware, get_pending_articals);
+
+
+// Update the route handler to filter out pending articles
+// Update the route handler to filter out pending articles
+// Update the route handler to fetch only active articles
+// const get_home_articles = async (req, res) => {
+//   const { currentPage, searchValue, activeOnly } = req.query;
+
+//   try {
+//       let articles = [];
+
+//       if (activeOnly === 'true') {
+//           // Fetch only active articles (status: 'active')
+//           articles = await articleModel.find({ status: 'active' })
+//               .skip(parseInt(currentPage - 1) * parPage)
+//               .limit(parPage)
+//               .sort({ createAt: -1 });
+//       } else {
+//           // Fetch all articles including pending (status: 'pending')
+//           articles = await articleModel.find()
+//               .skip(parseInt(currentPage - 1) * parPage)
+//               .limit(parPage)
+//               .sort({ createAt: -1 });
+//       }
+
+//       const countArticle = await articleModel.find({ status: 'active' }).countDocuments();
+
+//       res.status(200).json({
+//           articles,
+//           parPage,
+//           countArticle,
+//       });
+//   } catch (error) {
+//       res.status(500).json({
+//           errorMessage: {
+//               error: 'Internal server error',
+//           }
+//       });
+//   }
+// }
+
+// router.get('/home-article-get', auth_sub_admin, get_home_articles);
 
 
 

@@ -13,6 +13,8 @@ import { useDispatch } from 'react-redux'
 import NotFound from "./components/home/NotFound";
 import Contact from "./components/home/Contact";
 import WriteForUs from "./components/home/WriteForUs";
+
+
 function App() {
   const dispatch = useDispatch()
   useEffect(() => {

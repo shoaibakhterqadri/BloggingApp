@@ -1,120 +1,48 @@
-import React from "react";
-import "../../scss/components/home/Carousel.scss";
-import { useSelector, useDispatch } from "react-redux";
+import React, { useState, useEffect } from 'react';
+import '../../scss/components/home/_carousel.scss';
+
+const images = [
+  'https://images.ctfassets.net/hrltx12pl8hq/28ECAQiPJZ78hxatLTa7Ts/2f695d869736ae3b0de3e56ceaca3958/free-nature-images.jpg?fit=fill&w=1200&h=630',
+  './second.png',
+  './second.png',
+
+ ];
 
 const Carousel = () => {
-  const { oldArticle, recentArticle, allTag, allCategory } = useSelector(
-    (state) => state.homeReducer
-  );
+  const [index, setIndex] = useState(0);
 
+  const nextSlide = () => {
+    setIndex((prevIndex) => (prevIndex === images.length - 1 ? 0 : prevIndex + 1));
+  };
 
-//   const slides = document.querySelectorAll(".slide");
-//   let counter = 0;
-//   const goPrev = () => {
-//     counter--;
-//     slideImage();
-// };
-//   slides.forEach((slide, index) => {
-//       slide.style.left = `${index * 100}%`;
-//   });
+  const prevSlide = () => {
+    setIndex((prevIndex) => (prevIndex === 0 ? images.length - 1 : prevIndex - 1));
+  };
 
- 
+  useEffect(() => {
+    const interval = setInterval(nextSlide, 2000);
 
-//   const goNext = () => {
-//       counter++;
-//       slideImage();
-//   };
-
-//   const slideImage = () => {
-//       slides.forEach((slide) => {
-//           slide.style.transform = `translateX(-${counter * 100}%)`;
-//       });
-//   };
-
+    return () => clearInterval(interval);
+  }, []);
 
   return (
-    <>
-       {/* {(recentArticle.length-1) > 0 &&
-        recentArticle.map((art, index) => (
-          <div className="row-image">
-            {console.log(art)}
-            <div key={index} className="column-image">
-              <img
-                src={`http://localhost:3000/articalImage/${art.image}`}
-                alt="image"
-                style={{ width: "100%", height: "61%" }}
-              />
-              </div>
-              <div key={index} className="column-image">
-              <img
-                src={`http://localhost:3000/articalImage/${art.image}`}
-                alt="image"
-                style={{ width: "100%", height: "61%" }}
-              />
-              </div>
-              <div className="column-image">
-                <img
-                  src={`http://localhost:3000/articalImage/${art.image}`}
-                  alt=""
-                  style={{ width: "100%", height: "35%" }}
-                />
-                <img
-                  src="https://www.goodreturns.in/img/2014/12/29-1419829109-online-600.jpg"
-                  alt=""
-                  style={{ width: "50%", height: "25%" }}
-                />
-                <img
-                  src="https://www.goodreturns.in/img/2014/12/29-1419829109-online-600.jpg"
-                  alt=""
-                  style={{ width: "50%", height: "25%" }}
-                />
-              </div>
+    <div className="carousel">
+      <div className="carousel-inner">
+        {images.map((image, i) => (
+          <div key={i} className={`carousel-item ${i === index ? 'active' : ''}`}>
+            <img src={image} alt={`Slide ${i + 1}`} />
           </div>
-        ))}  */}
-
-
-
-{/* {
-                                recentArticle.length > 0 && recentArticle.map((art, index) =>
-                                    <div key={index} className="some-recent-artical">
-                                        <div className="row">
-                                            <div className="col-4">
-                                                <div className="img">
-                                                    <img src={`http://localhost:3000/articalImage/${art.image}`} alt="" />
-                                                </div>
-                                            </div>
-                                           
-                                        </div>
-                                    </div>
-                                )
-                            } */}
-
-
-
-
-
-{/* {recentArticle.length > 0 &&
-        recentArticle.map((art, index) => (
-          <> 
-<main key={index} >
-<img src={`http://localhost:3000/articalImage/${art.image}`} className="slide" alt="Description 1" />
-<img src={`http://localhost:3000/articalImage/${art.image}`} className="slide" alt="Description 1" />
-    
-    <img src={`http://localhost:3000/articalImage/${art.image}`} className="slide" alt="Description 1" />
-    <img src="https://www.goodreturns.in/img/2014/12/29-1419829109-online-600.jpg" class="slide" alt="Description 2" />
-    <img src="https://www.goodreturns.in/img/2014/12/29-1419829109-online-600.jpg" class="slide" alt="Description 3" />
-    <img src="https://www.goodreturns.in/img/2014/12/29-1419829109-online-600.jpg" class="slide" alt="Description 4" />
-    <img src="Image Path Here" class="slide" alt="Description 5" />
-</main>
-
-<div class="nav">
-    <button onClick="goPrev()">Previous</button>
-    <button onClick="goNext()">Next</button>
-</div> 
-</>
-))}*/}
-
-    </>
+        ))}
+      </div>
+      <div className="carousel-controls">
+        <button className="carousel-control" onClick={prevSlide}>
+          &lt;
+        </button>
+        <button className="carousel-control" onClick={nextSlide}>
+          &gt;
+        </button>
+      </div>
+    </div>
   );
 };
 

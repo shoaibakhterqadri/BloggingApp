@@ -11,7 +11,7 @@ import Footer from './Footer';
 import CreateAt from './CreateAt';
 import { useSelector, useDispatch } from 'react-redux'
 import { get_home_tag_category } from '../../store/actions/home/homeAction'
-import Carousel from './Carousel';
+import Carousel from './Carousel'
 
 const Home = ({ history }) => {
     const dispatch = useDispatch()

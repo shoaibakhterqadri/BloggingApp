@@ -66,7 +66,7 @@ const DashboradNavbar = () => {
                     }
                 />
                 <div className="dashborad-navbar-left-side">
-                    <label htmlFor="" className='dash'><span>D</span></label>
+                    <label htmlFor="" className='dash'><span>SA</span></label>
                     <label className='bar' htmlFor="sidebar"><span><BsListUl /></span></label>
                     <h2><Link to='/dashborad'>Shoaib Akhter</Link></h2>
                 </div>
@@ -99,7 +99,7 @@ const DashboradNavbar = () => {
                                     </ul>
                                 </div>
                             </div>
-                            <UserMessage />
+                            {/* <UserMessage /> */}
                         </div>
                         <label onClick={profileModel} htmlFor="adminInfo"><img src={userInfo.image} alt="" /></label>
                         <div className="name-time" onClick={profileModel} htmlFor="adminInfo">

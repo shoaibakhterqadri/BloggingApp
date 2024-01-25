@@ -27,7 +27,7 @@ const PopularArtical = () => {
                     <div className="title-time">
                         <Link to={`/artical/details/jg`}>{art.title}</Link>
                         <br />
-                        <span>2 jun 2022</span>
+                        {/* <span>2 jun 2022</span> */}
                     </div>
                 </div>
             </div>

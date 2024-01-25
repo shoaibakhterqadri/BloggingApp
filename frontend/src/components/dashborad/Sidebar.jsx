@@ -103,7 +103,7 @@ const Sidebar = () => {
                         </Link>
                     </div>
                 </li>
-                <li>
+                {/* <li>
                     <label htmlFor='user'>
                         <h3>
                         <Link to='/dashborad/all-sub-admin'>
@@ -111,22 +111,22 @@ const Sidebar = () => {
                             <span>All sub-admin</span>
                         </Link>
                         </h3>
-                        {/* <span className='right_icon4'><BsChevronRight /></span> */}
+                        <span className='right_icon4'><BsChevronRight /></span>
                     </label>
-                    {/* <div className="user_category">
+                    <div className="user_category">
                         
                         <Link to='/dashborad/all-sub-admin'>
                             <span><FaEye/></span>
                             <span>All sub-admin</span>
                         </Link>
-                    </div> */}
-                </li>
+                    </div>
+                </li> */}
                 <li>
-                    <Link to='/dashborad/comments'>
+                    <Link to='/dashborad/all-sub-admin'>
                         <label>
                             <h3>
-                                <span><AiFillDashboard /></span>
-                                <span>Comments</span>
+                                <span><FaEye/></span>
+                                <span>All sub-admin</span>
                             </h3>
                         </label>
                     </Link>

@@ -78,7 +78,7 @@ const ArticleAdd = ({history}) => {
         }
     }
 
-    console.log((text.replace(/<\/?[^>]+(>|$)/g, "").replace(/&nbsp;/g, " ")))
+    // console.log((text.replace(/<\/?[^>]+(>|$)/g, "").replace(/&nbsp;/g, " ")))
 
     const add = async (e) => {
         e.preventDefault();
@@ -95,16 +95,16 @@ const ArticleAdd = ({history}) => {
         // console.log("API URL is " +apiUrl);
 
         try {
-            const response = await fetch(apiUrl);
-            console.log(response);
-            const data = await response.json();
-            console.log(data);
+            // const response = await fetch(apiUrl);
+            // console.log("response "+response);
+            // const data = await response.json();
+            // console.log("data is "+data);
 
-            if (data.items && data.items.length > 0) {
-                toast.error('Plagiarism detected! Article cannot be published.');
-                alert("Plagiarism");
-                return;
-            }
+            // if (data.items && data.items.length > 0) {
+            //     toast.error('Plagiarism detected! Article cannot be published.');
+            //     alert("Plagiarism");
+            //     return;
+            // }
     
             // Continue with the article submission if no plagiarism is detected
             const { title, image, category, tag } = state;

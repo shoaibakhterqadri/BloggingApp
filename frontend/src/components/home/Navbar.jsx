@@ -58,6 +58,18 @@ const Navbar = ({ nav }) => {
                 <Link to="/">Home</Link>
               </li>
               <li className="link-item">
+                <Link to="/">Education</Link>
+              </li>
+              <li className="link-item">
+                <Link to="/">Technology</Link>
+              </li>
+              <li className="link-item">
+                <Link to="/">Business</Link>
+              </li>
+              <li className="link-item">
+                <Link to="/">Religous</Link>
+              </li>
+              {/* <li className="link-item">
                 <Link to="/about">About</Link>
               </li>
               <li className="link-item">
@@ -65,7 +77,7 @@ const Navbar = ({ nav }) => {
               </li>
               <li className="link-item">
                 <Link to="/writeforus">Write For Us</Link>
-              </li>
+              </li> */}
               <li className="link-item">
                 {console.log(userInfo)}
                 {userInfo && userInfo.role === "sub admin" && userInfo.accessStatus==="unblock" ? (

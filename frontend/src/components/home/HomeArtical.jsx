@@ -16,9 +16,9 @@ const HomeArtical = () => {
     }, [currentPage])
     
 
-      const publishedArticles = allArticle.filter(
-        (article) => article.status === 'published'
-      );
+      const publishedArticles = allArticle
+      .filter((article) => article.status === 'published')
+      .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
 
     return (
         <>

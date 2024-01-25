@@ -10,11 +10,7 @@ const fs = require('fs')
 module.exports.admin_login = async (req, res) => {
 
     const { email, password } = req.body;
-    console.log("Email: ", email);
-console.log("Password: ", password);
-
     const error = {
-
     }
 
     if (email && !validator.isEmail(email)) {
@@ -32,7 +28,6 @@ console.log("Password: ", password);
     } else {
         try {
             const getAdmin = await adminModel.findOne({ email }).select('+password');
-            console.log("The admin is "+getAdmin);
             if (getAdmin) {
                 const matchPassword = await bcrypt.compare(password, getAdmin.password);
                 if (matchPassword) {

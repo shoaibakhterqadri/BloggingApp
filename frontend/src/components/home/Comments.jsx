@@ -224,7 +224,8 @@ const Comments = () => {
       </div>
       <div className="comment_submit">
         <h2>Give Your Comment</h2>
-        {userInfo && (userInfo.role === "sub admin" || userInfo.role === "admin") ? (
+        {/* {userInfo && (userInfo.role === "sub admin" || userInfo.role === "admin") ? ( */}
+        {userInfo && (userInfo.role === "sub admin" ) ? (
           <form>
             <div className="form-group">
               <textarea
@@ -251,24 +252,24 @@ const Comments = () => {
           </form>
         ) : (
           <ul className="login-first">
-            <li className="btn">
+            {/* <li className="btn">
               <span>
                 <FaFacebookSquare />
               </span>
               <button className="btn">Login Facebook</button>
-            </li>
+            </li> */}
             <li className="btn">
               <span>
                 <FaLock />
               </span>
               <Link to="/login">Login</Link>
             </li>
-            <li className="btn">
+            {/* <li className="btn">
               <span>
                 <FaGoogle />
               </span>
               <button className="btn">Login Google</button>
-            </li>
+            </li> */}
           </ul>
         )}
       </div>

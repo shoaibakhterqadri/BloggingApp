@@ -41,7 +41,7 @@ const AllTag = () => {
             <div className="show-category-action">
                 <div className="numof-search-newAdd">
                     <div className="numof">
-                        <h2>({tagCount})</h2>
+                        <h2>Tags ({tagCount})</h2>
                     </div>
                     <div className="searchOf">
                         <div className="search">

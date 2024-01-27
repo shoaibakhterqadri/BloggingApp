@@ -21,6 +21,7 @@ const AdminLogin = ({history}) => {
         })
     }
     const adminLogin = (e) => {
+        console.log("state"+state);
         e.preventDefault();
         dispatch(admin_login(state));
     }

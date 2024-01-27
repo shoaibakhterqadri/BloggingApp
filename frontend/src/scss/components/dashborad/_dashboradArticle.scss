@@ -1,11 +1,13 @@
 .dashborad-article{
-    
     .article-action-pagination{
         min-height: calc(100vh - 100px);
         padding: 10px 14px;
         background-color: #fff;
         justify-content: space-between;
         flex-direction: column;
+        .searchOf{
+            max-width: 30%;
+        }
         .height-70vh{
             min-height: 70vh;
             display: flex;

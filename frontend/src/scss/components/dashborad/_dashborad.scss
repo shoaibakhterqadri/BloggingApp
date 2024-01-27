@@ -43,6 +43,7 @@
                 font-weight: 600;
                 a {
                     color: #404040;
+                    
                 }
                 span {
                     cursor: pointer;
@@ -96,6 +97,11 @@
                             justify-content: center;
                             z-index: 1;
                             text-transform: capitalize;
+                            text-decoration: none;
+                            h2{
+                                
+                                text-decoration: none;
+                            }
                         }
                         &::before {
                             content: "";

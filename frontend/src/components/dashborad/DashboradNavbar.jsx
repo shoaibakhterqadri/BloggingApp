@@ -10,13 +10,17 @@ import { useSelector, useDispatch } from 'react-redux';
 import { get_notification, seen_notification, delete_notification } from '../../store/actions/Dashborad/dashboardAction';
 import { useEffect } from 'react';
 
-const DashboradNavbar = () => {
+const DashboradNavbar = ({openLeftMenu}) => {
 
     const dispath = useDispatch();
     const { userInfo } = useSelector(state => state.adminReducer)
     const { notifications, successMessage } = useSelector(state => state.dashboardIndex)
     const [profileModelShow, setProfileModelShow] = useState(false)
-    const [nModelShow, setNModelShow] = useState(false)
+    const [nModelShow, setNModelShow] = useState(false);
+    const [sidebarVisible, setSidebarVisible] = useState(false);
+    const [sidebarStyles, setSidebarStyles] = useState({ 
+        width: '275px', 
+      });
 
     const profileModel = () => {
         if (profileModelShow) {
@@ -52,6 +56,10 @@ const DashboradNavbar = () => {
     const seenNotification = (id) => {
         dispath(seen_notification(id))
     }
+
+    // const toggleSidebar = () => {
+    //     setSidebarVisible(!sidebarVisible);
+    // };
     return (
         <>
             <div className='dashborad-navbar'>
@@ -65,14 +73,14 @@ const DashboradNavbar = () => {
                         }
                     }
                 />
-                <div className="dashborad-navbar-left-side">
+                {/* <div className="dashborad-navbar-left-side">
                     <label htmlFor="" className='dash'><span>SA</span></label>
                     <label className='bar' htmlFor="sidebar"><span><BsListUl /></span></label>
                     <h2><Link to='/dashborad'>Shoaib Akhter</Link></h2>
-                </div>
+                </div> */}
                 <div className="dashborad-navbar-right-side">
-               
-                    <h2><Link to='/dashborad'><span>View site</span></Link></h2>
+        <button onClick={openLeftMenu} className="w3-button w3-large w3-left w3-margin toggle-button">&#9776;</button>
+
                     <div className="search">
                         <input type="text" placeholder='search' className="form-control" />
                     </div>

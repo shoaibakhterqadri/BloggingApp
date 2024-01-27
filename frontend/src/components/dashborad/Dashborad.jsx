@@ -18,6 +18,8 @@ import AllUser from './AllUser';
 import SubadminProfile from './SubadminProfile';
 import DashComments from './DashComments';
 import { AiFillDashboard } from 'react-icons/ai';
+// import SideBar from './sidebar/SideBar'
+
 
 const Dashborad = () => {
   const [sidebarVisible, setSidebarVisible] = useState(false);
@@ -30,6 +32,8 @@ const Dashborad = () => {
       <Helmet>
         <title>Dashborad</title>
       </Helmet>
+        {/* <SideBar /> */}
+
       <DashboradNavbar />
       <div className="dashborad-main-content">
       {/* <div className="sidebar-toggle-btn" onClick={toggleSidebar}>

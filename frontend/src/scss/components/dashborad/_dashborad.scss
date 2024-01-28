@@ -127,7 +127,90 @@
     }
 }
 
-  /* Responsive Styles for iPhone SE */
+
+
+/* Responsive Styles for iPad Pro */
+@media only screen and (max-width: 1024px) {
+        .dashborad {    
+            &-main-content {
+                &-elements {
+                    .dashborad-elements {
+                        .cards {
+                            display: grid;
+                            grid-template-columns: repeat(3, 1fr);
+                        }
+                        .card-chart {
+                             height: 70vh;
+                        }
+                    }
+                }
+            }
+        }
+}
+
+/* Responsive Styles for iPhone 14 Pro Max */
+@media only screen and (max-width: 896px) {
+    .dashborad {    
+        &-main-content {
+            &-elements {
+                .dashborad-elements {
+                    .cards {
+                        grid-template-columns: repeat(3, 1fr);
+                    }
+                }
+            }
+        }
+    }
+}
+
+    /* Responsive Styles for iPad Air */
+@media only screen and (max-width: 834px) {
+        .dashborad {    
+            &-main-content {
+                &-elements {
+                    .dashborad-elements {
+                        .cards {
+                            grid-template-columns: repeat(3, 1fr);
+                        }
+                    }
+                }
+            }
+        }
+}
+
+    /* Responsive Styles for iPad Mini */
+@media only screen and (max-width: 768px) {
+        .dashborad {    
+            &-main-content {
+                &-elements {
+                    .dashborad-elements {
+                        .cards {
+                            grid-template-columns: repeat(3, 1fr);
+                        }
+                    }
+                }
+            }
+        }
+}
+ 
+
+  /* Responsive Styles for iPhone XR */
+@media only screen and (max-width: 415px) {
+    .dashborad {    
+        &-main-content {
+            &-elements {
+                .dashborad-elements {
+                    .cards {
+                        grid-template-columns: repeat(2, 1fr);
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+    /* Responsive Styles for iPhone SE */
 @media only screen and (max-width: 376px) {
     .dashborad {    
         &-main-content {
@@ -141,88 +224,9 @@
         }
     }
 }
-  
-  /* Responsive Styles for iPhone XR */
-  @media only screen and (max-width: 415px) {
-    .dashborad {    
-        &-main-content {
-            &-elements {
-                .dashborad-elements {
-                    .cards {
-                        grid-template-columns: repeat(2, 1fr);
-                    }
-                }
-            }
-        }
-    }
-  }
-  
-  /* Responsive Styles for iPhone 14 Pro Max */
-  @media only screen and (max-width: 896px) {
-    .dashborad {    
-        &-main-content {
-            &-elements {
-                .dashborad-elements {
-                    .cards {
-                        grid-template-columns: repeat(2, 1fr);
-                    }
-                }
-            }
-        }
-    }
-  }
-  
-  /* Responsive Styles for iPad Mini */
-  @media only screen and (max-width: 768px) {
-    .dashborad {    
-        &-main-content {
-            &-elements {
-                .dashborad-elements {
-                    .cards {
-                        grid-template-columns: repeat(3, 1fr);
-                    }
-                }
-            }
-        }
-    }
-  }
-  
-  /* Responsive Styles for iPad Air */
-  @media only screen and (max-width: 834px) {
-    .dashborad {    
-        &-main-content {
-            &-elements {
-                .dashborad-elements {
-                    .cards {
-                        grid-template-columns: repeat(3, 1fr);
-                    }
-                }
-            }
-        }
-    }
-  }
-  
-  /* Responsive Styles for iPad Pro */
-  @media only screen and (max-width: 1024px) {
-    .dashborad {    
-        &-main-content {
-            &-elements {
-                .dashborad-elements {
-                    .cards {
-                        display: grid;
-                        grid-template-columns: repeat(3, 1fr);
-                    }
-                    .card-chart {
-                         height: 70vh;
-                    }
-                }
-            }
-        }
-    }
-  }
-  
+
   /* Responsive Styles for Galaxy Fold */
-  @media only screen and (max-width: 281px) {
+@media only screen and (max-width: 281px) {
     .dashborad {    
         &-main-content {
             &-elements {
@@ -238,4 +242,4 @@
             }
         }
     }
-  }
+}

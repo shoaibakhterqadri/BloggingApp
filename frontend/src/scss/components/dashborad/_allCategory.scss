@@ -53,3 +53,54 @@
         }
     }
 }
+
+/* Responsive Styles for iPad Pro */
+@media only screen and (max-width: 1024px) {
+
+}
+
+/* Responsive Styles for iPhone 14 Pro Max */
+@media only screen and (max-width: 896px) {
+
+}
+
+/* Responsive Styles for iPad Air */
+@media only screen and (max-width: 834px) {
+
+}
+
+/* Responsive Styles for iPad Mini */
+@media only screen and (max-width: 768px) {
+
+}
+
+
+/* Responsive Styles for iPhone XR */
+@media only screen and (max-width: 415px) {
+
+}
+
+
+/* Responsive Styles for iPhone SE */
+@media only screen and (max-width: 376px) {
+    .all-category{
+       width: 106vw;
+       background-color: #f0f0f0;
+        .show-category-action{
+            .numof-search-newAdd{
+                .numof{
+                    h2{
+                        font-size: 20px;
+                    }
+                }
+            }
+            .height-60vh{
+                .categorys{
+                    grid-template-columns: repeat(2,1fr);
+                }
+            }
+        }
+    }
+    
+}
+

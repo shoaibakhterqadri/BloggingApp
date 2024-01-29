@@ -219,7 +219,6 @@ const ArticleAdd = ({history}) => {
                             config={config}
                             onBlur={newText => setText(newText)}
                             onChange={newText => { }}
-                        
                         />
                         <div className="gcse-search"></div>
                         {

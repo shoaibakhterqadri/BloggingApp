@@ -27,7 +27,7 @@ const Article = ({index,art}) => {
                             <span>{moment(art.createdAt).fromNow()}</span>
                         </div>
                         <div className="artical-text">
-                            {htmlToText(art.articleText.slice(0, 230))}
+                            {htmlToText(art.articleText.slice(0, 160))}
                         </div>
                         <div className="read-more">
                             <button className="read-more-btn">

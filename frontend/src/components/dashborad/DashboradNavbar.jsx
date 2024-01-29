@@ -81,7 +81,7 @@ const DashboradNavbar = ({openLeftMenu}) => {
                 <div className="dashborad-navbar-right-side">
         <button onClick={openLeftMenu} className="w3-button w3-large w3-left w3-margin toggle-button">&#9776;</button>
 <div className="website-name">
-    <h2>Blogify Blog</h2>
+    <h2>BlogifyBlog</h2>
 </div>
                     <div className="category">
                         <ul>

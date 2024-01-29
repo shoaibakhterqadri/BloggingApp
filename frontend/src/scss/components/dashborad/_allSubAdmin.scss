@@ -6,6 +6,7 @@
         .loading-elements{
             .elements{
                 padding-top: 15px;
+                overflow-x: auto;
                 table{
                     width: 100%;
                     border-spacing: 0;
@@ -61,3 +62,17 @@
         }
     }
 }
+
+@media screen and (max-width: 750px) {
+    .all-sub-admin{
+        .elements-numberOf-search-add_new{
+            padding: 10px ;
+            .searchOf{
+                width: 35vw;
+            }
+            .newAdd{
+                margin-left: 10px;
+            }
+        }
+    }
+  }

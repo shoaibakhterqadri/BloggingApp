@@ -34,7 +34,7 @@ const Home = ({ history }) => {
     return (
         <div className="home">
             <Navbar nav={nav} />
-            <Carousel />
+            {/* <Carousel /> */}
             <div className="main-content">
                 <div className="container">
                     <div className="row">

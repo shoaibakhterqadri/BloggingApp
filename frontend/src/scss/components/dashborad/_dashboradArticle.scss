@@ -88,3 +88,27 @@
         }
     }
 }
+
+@media screen and (max-width: 950px) {
+    .dashborad-article{
+        .article-action-pagination{
+            .height-70vh{
+                .articles{
+                    grid-template-columns: repeat(3,1fr);
+                }
+            }
+        }
+    }
+  }
+
+@media screen and (max-width: 750px) {
+    .dashborad-article{
+        .article-action-pagination{
+            .height-70vh{
+                .articles{
+                    grid-template-columns: repeat(2,1fr);
+                }
+            }
+        }
+    }
+  }

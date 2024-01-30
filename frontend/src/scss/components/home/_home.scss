@@ -42,6 +42,7 @@
                                 text-align: center;
                                 background-color: #00a6ff;
                                 margin-bottom: 25px;
+                                
                                 h3{
                                     color: white;
                                     
@@ -52,7 +53,7 @@
                             }
                             .row{
                                 padding: 0px 10px 10px 10px;
-                                margin: 10px 0px;
+                                margin: 5px 0px;
                                 .col-4{
                                     a.image{
                                         img{
@@ -64,6 +65,7 @@
                                 .col-8{
                                     .title-time{
                                         padding: 0px 5px;
+                                        
                                         a{
                                             color: var(--text_color);
                                             font-size: 13px;
@@ -177,8 +179,8 @@
 
     @media screen and (max-width: 1000px) {
         .main-content{
-            background-color: red;
             .container{
+                min-width: 100%;
                 padding-top: 25px;
                 padding-bottom: 25px;
                 .row{
@@ -187,6 +189,7 @@
                     }
                     .col-4{
                         .search-category-tag{
+                            
                             .search{
                                 padding: 15px 10px;
                                 text-align: center;
@@ -355,7 +358,6 @@
 
     @media screen and (max-width: 768px) {
         .main-content {
-            background-color: green;
           .container {
               width: 100%;
               .row {

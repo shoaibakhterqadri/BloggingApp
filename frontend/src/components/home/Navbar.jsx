@@ -42,10 +42,7 @@ const Navbar = ({ nav }) => {
           <div className="col-4">
             <div className="image-menubar">
               <Link className="image" to="/">
-                <img
-                  src="http://localhost:3000/designImage/myBlog.png"
-                  alt=""
-                />
+               <h2>BlogifyBlog</h2> 
               </Link>
               <label className="menu_icon" htmlFor="toggle">
                 <BsListUl />
@@ -67,17 +64,20 @@ const Navbar = ({ nav }) => {
                 <Link to="/">Business</Link>
               </li>
               <li className="link-item">
+                <Link to="/">News</Link>
+              </li>
+              <li className="link-item">
+                <Link to="/">Health</Link>
+              </li>
+              <li className="link-item">
                 <Link to="/">Religous</Link>
               </li>
-              {/* <li className="link-item">
-                <Link to="/about">About</Link>
+              <li className="link-item">
+                <Link to="/writeforus">WriteForUs</Link>
               </li>
               <li className="link-item">
-                <Link to="/contact">Contact Us</Link>
+                <Link to="/contact">Contact</Link>
               </li>
-              <li className="link-item">
-                <Link to="/writeforus">Write For Us</Link>
-              </li> */}
               <li className="link-item">
                 {console.log(userInfo)}
                 {userInfo && userInfo.role === "sub admin" && userInfo.accessStatus==="unblock" ? (

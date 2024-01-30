@@ -2,6 +2,7 @@ import React,{useEffect} from 'react';
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from 'react-redux'
 import { get_old_recent_acticle } from '../../store/actions/home/homeAction'
+import moment from 'moment'
 
 const PopularArtical = () => {
     const dispatch = useDispatch()
@@ -25,9 +26,9 @@ const PopularArtical = () => {
                 </div>
                 <div className="col-8">
                     <div className="title-time">
-                        <Link to={`/artical/details/jg`}>{art.title}</Link>
+                        <Link to={`/artical/details/jg`}>{art.title.slice(0,50)}</Link>
                         <br />
-                        {/* <span>2 jun 2022</span> */}
+                        <span>{moment(art.createdAt).fromNow()}</span>
                     </div>
                 </div>
             </div>

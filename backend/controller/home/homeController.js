@@ -97,7 +97,7 @@ module.exports.category_article_get = async (req, res) => {
     let { currentPage, categorySlug } = req.query;
 
     currentPage = parseInt(currentPage);
-    const parPage = 2;
+    const parPage = 7;
     const skipPage = parseInt(currentPage - 1) * parPage;
 
     try {
@@ -121,7 +121,7 @@ module.exports.tag_article_get = async (req, res) => {
     let { currentPage, tagSlug } = req.query;
 
     currentPage = parseInt(currentPage);
-    const parPage = 2;
+    const parPage = 7;
     const skipPage = parseInt(currentPage - 1) * parPage;
 
     try {

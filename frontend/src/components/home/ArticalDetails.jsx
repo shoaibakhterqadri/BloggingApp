@@ -8,12 +8,13 @@ import { ImLinkedin } from "react-icons/im";
 import Comments from './Comments';
 import { get_article_details, like_dislike_get, user_article_like, user_article_dislike } from '../../store/actions/home/articleReadAction';
 import htmlParser from 'html-react-parser';
+import moment from 'moment'
 
 const ArticalDetails = () => {
 
     const dispath = useDispatch();
     const { slug } = useParams()
-    const { related_article, readMore, read_article, moreTag } = useSelector(state => state.homeReducer)
+    const { related_article, readMore, read_article, moreTag,recentArticle } = useSelector(state => state.homeReducer)
     const { like, dislike, like_status, dislike_status, like_dislike_message } = useSelector(state => state.likeDislike)
     const { userInfo } = useSelector(state => state.adminReducer)
 
@@ -70,7 +71,7 @@ const ArticalDetails = () => {
                     <span><Link to={`/artical/tag/${read_article?.tag_slug}` || ''}>{read_article?.tag}</Link></span>
                 </div>
                 <div className="time">
-                    <span>2 jun 2020</span>
+                {read_article && <span>{moment(read_article.createdAt).fromNow()}</span>}
                 </div>
             </div>
             <div className="home-artical-image">
@@ -103,27 +104,27 @@ const ArticalDetails = () => {
                         <div className="dislike-number">({like})</div>
                     </div>
                 </div>
-                <div className="view">
+                {/* <div className="view">
                     <span>211</span>
                     <span>view</span>
-                </div>
+                </div> */}
             </div>
             <div className="read-more">
                 <span>Read more : </span>
                 <Link to={readMore?.slug || ''}>{readMore?.title}</Link>
             </div>
             <div className="more-tags">
-                <span>Tags</span>
+                <span>Tags</span>       
                 {
                     moreTag.length > 0 && moreTag.map((teg, index) => <Link to={`/artical/tag/${teg}`} key={index}>{teg.split('-').join(' ') || ''}</Link>)
                 }
             </div>
-            <div className="social-icons">
+            {/* <div className="social-icons">
                 <a className='l1' href=""><FaFacebookSquare /></a>
                 <a className='l2' href=""><FaTwitterSquare /></a>
                 <a className='l3' href=""><FaGithubSquare /></a>
                 <a className='l4' href=""><ImLinkedin /></a>
-            </div>
+            </div> */}
             <div className="related-article">
                 <div className="more">
                     <h3>Related Articles</h3>

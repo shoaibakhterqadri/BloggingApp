@@ -9,6 +9,7 @@ import {
     FaYoutube,
     FaGithubSquare,
   } from "react-icons/fa";
+import moment from 'moment'
 
 const Footer = () => {
 
@@ -41,7 +42,7 @@ const Footer = () => {
                                                 <div className="title-link">
                                                     <Link to='/artical/details/sdfhgs'>{art.title}</Link>
                                                     <br />
-                                                    <span>2 jun 2020</span>
+                                                    <span>{moment(art.createdAt).fromNow()}</span>
                                                 </div>
                                             </div>
                                         </div>
@@ -61,7 +62,7 @@ const Footer = () => {
                                                 allCategory.length > 0 && allCategory.map((cate, index) =>
                                                     <div key={index} className="cate-item">
 
-                                                        <li><FaChevronRight /><Link to='/artical/category/algorithom'>{cate._id}</Link></li>
+                                                        <li><FaChevronRight /><Link to={`/artical/category/${cate._id.split(' ').join('-')}`}>{cate._id}</Link></li>
                                                         <span>({cate.count})</span>
                                                     </div>
                                                 )
@@ -74,7 +75,7 @@ const Footer = () => {
                                         </div>
                                         <ul className="tag-list">
                                             {
-                                                allTag.length > 0 && allTag.map((tag, index) => <li className='tag-item' key={index}><Link to='/artical/tag/programming'>{tag}</Link></li>
+                                                allTag.length > 0 && allTag.map((tag, index) => <li className='tag-item' key={index}><Link to={`/artical/tag/${tag.split(' ').join('-')}`}>{tag}</Link></li>
                                                 )
                                             }
 
@@ -86,7 +87,7 @@ const Footer = () => {
                                         </div>
                                         <ul className="tag-list link-items"> 
                                                 <li className='link-item'>
-                                                <a href=""><span><FaFacebookSquare /></span></a>
+                                                <a href="https://www.facebook.com/dawateislami.net/" target='_blank'><span><FaFacebookSquare /></span></a>
                                                </li>
                                                <li className='link-item'>
                                                 <a href="https://www.youtube.com/@engineershoaibakhterqadri18/videos" target='_blank'><span><FaYoutube /></span></a>
@@ -116,7 +117,7 @@ const Footer = () => {
                                                 <div className="title-link">
                                                     <Link to='/artical/details/sdfhgs'>{art.title}</Link>
                                                     <br />
-                                                    <span>2 jun 2020</span>
+                                                    <span>{moment(art.createdAt).fromNow()}</span>
                                                 </div>
                                             </div>
                                         </div>

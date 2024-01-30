@@ -7,7 +7,6 @@
     top: 0;
     background-color: #131313;
     box-shadow: var(--shadow_color);
-
     .row {
         #toggle{
             display: none;
@@ -20,14 +19,18 @@
                     label.menu_icon{
                         display: flex !important;
                     }
+                    h2{
+          margin-left: 20px;
+                    }
                 }
             }
             #toggle:checked~.col-8 ul.link-list.toggle{
-                height: 150px !important;
+                height: auto !important;
                 transition:  all .5s;
             }   
             .col-8{
                 width: 100%;
+                margin-left: 0;
                 ul.link-list{
                     flex-direction: column;
                     justify-content: flex-start !important;
@@ -35,9 +38,14 @@
                     overflow: hidden;
                     grid-gap: 8px;
                 }
+                .link-item{
+                    width: 50%; // Make the list items take full width
+                    text-align: start; // Center the text
+                }
             }
         }
         .col-4 {
+            width: auto;
             .image-menubar {
                 label.menu_icon {
                     display: none;
@@ -53,14 +61,26 @@
                     align-items: center;
 
                 }
-                height: 75px;
+                h2{
+                    padding: 5px;
+      display: flex;
+      justify-content: center;
+      align-content: center;
+      border-radius: 5px;
+      background-color: white;
+      color: black;
+      cursor: pointer;
+      margin-top: 10px;
+      font-weight:500;
+                }
+                height: 50px;
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
                 a.image {
                     margin-left: -8px;
                     width: 170px;
-                    height: 40px;
+                    height: 60px;
                     cursor: pointer;
                     img {
                         width: 100%;
@@ -70,13 +90,16 @@
             }
         }
         .col-8 {
+            margin-left: 40px;
+            width: auto;
             ul.link-list {
-                height: 75px;
+                height: 50px;
                 transition: all 0.5s;
                 display: flex;
                 justify-content: flex-end;
                 align-items: center;
                 grid-column-gap: 8px;
+                width: auto;
                 .link-item{
                     a{
                         font-size: 16px;
@@ -141,6 +164,7 @@
                                 justify-content: center;
                                 align-items: center;
                                 cursor: pointer;
+                                color: white;
                           h3 {
                                     font-size: 16px;
                                     display: flex;
@@ -195,7 +219,7 @@
                                 span {
                                     cursor: pointer;
                                     color: #404040;
-                                    font-weight: 600;
+                                    font-weight: 700;
                                 }
                             }
                         }

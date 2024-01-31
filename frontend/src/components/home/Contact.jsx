@@ -9,7 +9,7 @@ import { useEffect } from 'react';
 import toast, { Toaster } from 'react-hot-toast'
 import '../../scss/components/home/_contact.scss';
 
-const Contact = ({ history }) => {
+const Contact = () => {
 
     const dispatch = useDispatch();
     const { errorMessage, successMessage, loader,authenticate } = useSelector(state => state.adminReducer)
@@ -111,7 +111,7 @@ const Contact = ({ history }) => {
                                 <div className="icon"><FaBook /></div>
                                 <input onChange={inputHandle} type="subject" name='subject' id='subject' placeholder='subject' className="form-control" />
                             </div>
-                            <p>{errorMessage?.subject}jkbk</p>
+                            <p>{errorMessage?.subject}</p>
                         </div>
                         <div className="form-group">
                         <label htmlFor="message">Message</label>
@@ -119,7 +119,7 @@ const Contact = ({ history }) => {
                                 <div className="icon"><FaEnvelope /></div>
                                 <textarea onChange={inputHandle} name='message' id='message' placeholder='Write your Message' className="form-control" style={{ width: '100%', height: '100px' }} />
                             </div>
-                            <p>{errorMessage?.subject}jkhbkj</p>
+                            <p>{errorMessage?.subject}</p>
                         </div>
                         <div className="form-group">
                             {
@@ -130,18 +130,12 @@ const Contact = ({ history }) => {
                                         <div className="spinner3"></div>
                                     </div>
                                 </button> : <button onClick={user_register} className="btn btn-block">
-                                    Register
+                                    Submit
                                 </button>
                             }
                         </div>
-                        {/* <div className="form-group">
-                            <div className="login-page">
-                                <Link to='/login'>login your account</Link>
-                            </div>
-                        </div> */}
                     </form>
                 </div>
-                
             </div>
         </div>
         </div>

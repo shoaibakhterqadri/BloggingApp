@@ -85,7 +85,7 @@ const Login = ({ history }) => {
 
                         </div>
                     </form>
-                    <div className="or">or</div>
+                    {/* <div className="or">or</div>
                     <div className="fb-google-auth">
                         <div className="fb-google-logo">
                             <div className="fb">
@@ -95,7 +95,7 @@ const Login = ({ history }) => {
                                 <button><FaGoogle /><span>signup with google</span></button>
                             </div>
                         </div>
-                    </div>
+                    </div> */}
                     <div className="login-page">
                         <Link to='/register'>Register your account</Link>
                     </div>

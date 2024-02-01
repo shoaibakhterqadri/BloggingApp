@@ -2,6 +2,7 @@ import { createStore, compose, applyMiddleware, combineReducers } from "redux";
 import ThunkMiddleware from "redux-thunk";
 
 import { adminReducer } from "./reducers/adminReducer";
+import contactReducer from "./reducers/contactReducer";
 import { dashCategoryReducer } from "./reducers/dashCategoryReducer";
 import { dashTagReducer } from "./reducers/dashTagReducer";
 import { articalReducer } from "./reducers/articalReducer";
@@ -12,6 +13,7 @@ import { dashboardReducer } from "./reducers/dashboardIndexReducer";
 
 const rootReducer = combineReducers({
   adminReducer,
+  contactReducer,
   dashboradCategory: dashCategoryReducer,
   dashboradTag: dashTagReducer,
   dashboradArtical: articalReducer,

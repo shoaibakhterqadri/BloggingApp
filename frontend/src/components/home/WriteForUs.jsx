@@ -74,7 +74,7 @@ const WriteForUs = () => {
 
           <div className="card">
             <div className="contact-form">
-              <h3>Write For Us</h3>
+              <h1>Write For Us</h1>
               <p>
                 Welcome to [Your Blog Name], a platform that values diverse
                 perspectives and insights from passionate writers like you! We

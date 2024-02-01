@@ -1,18 +1,19 @@
 .contact-page {
     background-color: #f0f0f0;
-    padding-top: 20px;
+    padding-top: 30px;
     padding-bottom: 40px;
   }
   
   .contact {
     background-color: #f0f0f0;
-    height: calc(99vh - 80px);
+    // height: calc(99vh - 80px);
     display: flex;
     justify-content: center;
+    max-height: 20vh;
   
     .card {
       width: 35%;
-      min-height: 90vh;
+      max-height: 10vh;
       align-items: center;
       border-radius: 0%;
       padding: 0px;

@@ -13,6 +13,7 @@ const authRouter = require('./routes/authRoutes');
 const dashboadRoute = require('./routes/Dashborad/dashboradRoutes');
 const homeRoutes = require('./routes/home/homeRoutes');
 const homeCommentRoutes = require('./routes/home/homeCommentRoutes');
+const contactRoute = require('./routes/home/contactRoutes');
 
 app.get('/', (req, res) => {
     res.send('server is running')
@@ -37,6 +38,7 @@ app.use('/rest-api', authRouter);
 app.use('/rest-api', dashboadRoute);
 app.use('/rest-api', homeRoutes)
 app.use('/rest-api/', homeCommentRoutes)
+app.use('/rest-api', contactRoute); 
 
 // db connect........
 dbConnect();

@@ -79,7 +79,7 @@ const Navbar = ({ nav }) => {
                 <Link to="/contact">Contact</Link>
               </li>
               <li className="link-item">
-                {console.log(userInfo)}
+                
                 {userInfo && userInfo.role === "sub admin" && userInfo.accessStatus==="unblock" ? (
                   <>
                     

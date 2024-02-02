@@ -76,7 +76,7 @@ const WriteForUs = () => {
             <div className="contact-form">
               <h1>Write For Us</h1>
               <p>
-                Welcome to [Your Blog Name], a platform that values diverse
+                Welcome to BlogifyBlog, a platform that values diverse
                 perspectives and insights from passionate writers like you! We
                 believe in the power of sharing knowledge, experiences, and
                 stories to inspire and educate our community.
@@ -105,7 +105,7 @@ const WriteForUs = () => {
 
               <h4>Free Guest Posting:</h4>
               <p>
-                [Your Blog Name] is a free guest posting site. Sub-Admins, like
+                BlogifyBlog is a free guest posting site. Sub-Admins, like
                 yourself, can contribute and publish articles without any cost.
                 We value the expertise and diverse perspectives our
                 contributors bring to our platform.
@@ -119,10 +119,6 @@ const WriteForUs = () => {
                 collaboration and are here to support you throughout your
                 writing journey.
               </p>
-
-              <form>
-                {/* Your form inputs go here */}
-              </form>
             </div>
           </div>
         </div>

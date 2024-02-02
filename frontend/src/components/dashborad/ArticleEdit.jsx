@@ -9,7 +9,6 @@ import { get_tag_category,article_edit, article_update} from "../../store/action
 const ArticleEdit = ({history}) => {
 
     const {articleSlug} = useParams();
-
     const { allCategory, allTag, loader ,articleError,articleSuccessMessage,edtiArticle,editRequest} = useSelector(state => state.dashboradArtical)
 
     const dispatch = useDispatch();
@@ -28,7 +27,6 @@ const ArticleEdit = ({history}) => {
         imageName: '',
         img: ''
     })
-
 
     const inputHendle = (e) => {
         setState({
@@ -50,14 +48,12 @@ const ArticleEdit = ({history}) => {
         setUpdateBtn(true)
     }
 
-
     const updateSlug = (e) => {
         e.preventDefault();
         const newSlug = slug.trim().split(' ').join('-');
         setSlug(newSlug)
         setUpdateBtn(false)
     }
-
 
     const update = (e) => {
         e.preventDefault();
@@ -69,7 +65,6 @@ const ArticleEdit = ({history}) => {
             slug,
             text,
             articleId : edtiArticle._id
-
         }))
     }
     const config = {
@@ -183,7 +178,6 @@ const ArticleEdit = ({history}) => {
                                     <div className="spinner3"></div>
                                 </div>
                             </button> : <button className="btn btn-block">Update Article</button>
-
                         }
                     </div>
                 </form>

@@ -30,11 +30,6 @@ const HomeArtical = () => {
         ) : (
           <h3>Article not found</h3>
         )}
-                {/* {
-                    allArticle.length > 0 ?  allArticle.map((art, index) =>
-                        <Article key={index} art={art} />
-                    ) : <h3>Article not found</h3>
-                } */}
             </div>
             {
                 parPage < countArticle ?

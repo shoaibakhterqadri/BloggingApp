@@ -72,10 +72,6 @@ const Home = ({ history }) => {
                                     </div>
                                     </a>
                                     <div className="image">
-                                        {/* <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FIslam-100798538341988&tabs=timeline&width=340&height=148&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" style={{
-                                            width: "340px", height: "145px", border: 'none', overflow: 'hidden', scrolling: "no", frameborder: "0", allowfullscreen: "true", allow: "autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-                                        }}></iframe> */}
-
 <iframe width="560" height="250" src="https://www.youtube.com/embed/ott0x6d6Ajw?si=mYsyHJmlizvYX5aY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
                                     </div>

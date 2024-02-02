@@ -5,8 +5,7 @@ import ProtectRoute from "./components/auth/ProtectRoute";
 import Register from "./components/auth/Register";
 import Dashborad from "./components/dashborad/Dashborad";
 import Home from './components/home/Home';
-import EmailVerify from './components/auth/EmailVerify'
-  ;
+import EmailVerify from './components/auth/EmailVerify';
 import { userView } from './store/actions/home/homeAction'
 import { useEffect } from "react";
 import { useDispatch } from 'react-redux'

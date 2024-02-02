@@ -81,8 +81,6 @@ const Login = ({ history }) => {
                                     Login
                                 </button>
                             }
-
-
                         </div>
                     </form>
                     {/* <div className="or">or</div>
@@ -99,8 +97,7 @@ const Login = ({ history }) => {
                     <div className="login-page">
                         <Link to='/register'>Register your account</Link>
                     </div>
-                </div>
-                
+                </div>     
             </div>
         </div>
     </>;

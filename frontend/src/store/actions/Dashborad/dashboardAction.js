@@ -57,30 +57,11 @@ export const getSubAdmins = () => async (dispatch) => {
         type: 'GET_SUB_ADMINS_SUCCESS',
         payload: data.subAdmins,
       });
-      // Dispatch a new action for getting the total count
     dispatch(getSubAdminsCount(data.subAdmins.length));
     } catch (error) {
       console.error(error);
     }
   };
-
-  // export const blockUnblockSubAdmin = (subAdminId, accessStatus) => async (dispatch) => {
-  //   try {
-  //     await axios.put(`http://localhost:5000/rest-api/block-unblock-sub-admin/${subAdminId}`, { accessStatus }, { withCredentials: true });
-  //     dispatch({
-  //       type: 'BLOCK_UNBLOCK_SUB_ADMIN',
-  //       payload: { subAdminId, accessStatus },
-  //     });
-  //     // Update the accessStatus in the MongoDB database
-  //   await axios.updateOne(
-  //     `http://localhost:5000/rest-api/sub-admins`,
-  //     { _id: subAdminId },
-  //     { $set: { accessStatus: accessStatus } } 
-  //   )
-  //   } catch (error) {
-  //     console.error(error.message);
-  //   }
-  // };
 
   export const blockUnblockSubAdmins = (subAdminId, accessStatus) => async (dispatch) => {
     try {

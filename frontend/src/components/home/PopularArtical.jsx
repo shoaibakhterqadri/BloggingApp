@@ -12,7 +12,6 @@ const PopularArtical = () => {
         dispatch(get_old_recent_acticle())
     }, [])
 
-
     return (
         <>
         {

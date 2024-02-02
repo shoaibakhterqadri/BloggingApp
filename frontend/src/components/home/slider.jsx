@@ -1,6 +1,5 @@
 import React from 'react';
 import { Carousel as BootstrapCarousel } from 'react-bootstrap';
-
 import image1 from '../../carousel-image/1652293005744image5.jpeg';
 import image2 from '../../carousel-image/1700368675681Ds8Lgq-WxxhqasOFQehWADEQu9B68WZSTw212LKjsNs=_plaintext_638304518411410336.jpg';
 import image3 from '../../carousel-image/1703312158547Sahi Bhukari (3).png';

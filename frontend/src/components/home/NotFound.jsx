@@ -2,7 +2,6 @@ import React from 'react'
 import Navbar from './Navbar'
 import "../../scss/components/home/NotFound.scss";
 
-
 function NotFound() {
   return (
     <>

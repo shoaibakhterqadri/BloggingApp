@@ -224,7 +224,6 @@ const Comments = () => {
       </div>
       <div className="comment_submit">
         <h2>Give Your Comment</h2>
-        {/* {userInfo && (userInfo.role === "sub admin" || userInfo.role === "admin") ? ( */}
         {userInfo && (userInfo.role === "sub admin" ) ? (
           <form>
             <div className="form-group">

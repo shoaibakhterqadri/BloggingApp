@@ -25,7 +25,4 @@ const adminSchema = new mongoose.Schema({
 },{timeseries : true});
 
 const adminModel = mongoose.model('admins', adminSchema);
-
 module.exports = adminModel;
-
-// module.exports = model('admins',adminSchema);

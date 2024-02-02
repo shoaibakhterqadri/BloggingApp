@@ -1,9 +1,8 @@
 import React,{useEffect} from 'react';
 import Helmet from 'react-helmet';
-import { FaRegEye, FaSearch } from "react-icons/fa";
+import { FaSearch } from "react-icons/fa";
 import { MdDelete, MdEdit } from "react-icons/md";
 import { Link } from "react-router-dom";
-import { htmlToText } from "html-to-text";
 import Pagination from '../home/Pagination'
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";

@@ -29,7 +29,6 @@ module.exports.add_artical = (req, res) => {
 
     formDataHendle.parse(req, (err, fields, files) => {
         if (!err) {
-
             const { title, category, slug, tag, text } = fields;
             const validate = article_validator(fields, files);
             if (validate.validated) {

@@ -26,7 +26,6 @@ const ProtectRoute = ({ path, component, exact }) => {
             }
         }
     }
-
 }
 
 export default ProtectRoute;

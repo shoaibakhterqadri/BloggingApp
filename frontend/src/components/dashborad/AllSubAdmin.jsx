@@ -1,14 +1,11 @@
 import React, { useEffect } from "react";
 import Helmet from "react-helmet";
-import { FaSearch } from "react-icons/fa";
-import { MdDelete, MdEdit } from "react-icons/md";
 import { Link, useHistory } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { blockUnblockSubAdmins, getSubAdmins } from "./../../store/actions/Dashborad/dashboardAction";
 
 import Pagination from "../home/Pagination";
 
-// Function to encrypt email except for @gmail.com
 const encryptEmail = (email) => {
   if (email.endsWith("@gmail.com")) {
     return email.replace(/./g, '*');
@@ -26,12 +23,10 @@ const AllSubAdmin = () => {
   const { userInfo } = useSelector((state) => state.adminReducer);
 
   useEffect(() => {
-    // Dispatch the action to get sub-admins when the component mounts
     dispatch(getSubAdmins());
   }, [dispatch]);
 
   const handleBlockUnblock = async (subAdminId, accessStatus) => {
-    // Dispatch the action to block/unblock sub-admin
     await dispatch(blockUnblockSubAdmins(subAdminId, accessStatus));
 
     const updatedSubAdmins = subAdmins.map((subAdmin) =>

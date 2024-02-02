@@ -110,47 +110,12 @@
                     a:hover{
                         color: #00a6ff;
                     }
-                    // label {
-                    //     display: flex;
-                    //     align-items: center;
-                    //     background-color: red;
-                        
-                    //     img {
-                    //         width: 40px;
-                    //         height: 40px;
-                    //         border-radius: 50%;
-                    //         margin-right: 10px;
-                    //         cursor: pointer;
-                    //         border: 1px solid gray;
-                            
-                    //     }
-                    // }
-                    // .name-time {
-                    //     background-color: blue;
-                    //     display: flex;
-                    //     flex-direction: column;
-                    //     justify-content: center;
-                    //     align-items: center;
-                    //     // width: 10vw;
-                    //     cursor: pointer;
-                    //     h3 {
-                    //         font-size: 16px;
-                    //         font-weight: 400;
-                    //         display: flex;
-                    //         justify-content: center;
-                    //         align-items: center;
-                    //     }
-                    //     span {
-                    //         font-size: 13px;
-                    //         font-weight: 300;
-                    //     }
-                    // }
                     .profile-details {
                         display: flex;
                         align-items: center;
                     
                         label {
-                          margin-right: 10px; // Adjust the spacing between image and text as needed
+                          margin-right: 10px;
                           img {
                                     width: 40px;
                                     height: 40px;

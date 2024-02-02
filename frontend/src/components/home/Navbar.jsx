@@ -1,13 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import moment from "moment";
-import {
-  FaFacebookSquare,
-  FaTwitterSquare,
-  FaYoutube,
-  FaGithubSquare,
-} from "react-icons/fa";
-import { ImLinkedin } from "react-icons/im";
 import { BsListUl } from "react-icons/bs";
 import { useSelector } from "react-redux";
 import AdminInfo from "../dashborad/AdminInfo";

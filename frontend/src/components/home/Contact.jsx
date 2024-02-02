@@ -30,7 +30,6 @@ const Contact = () => {
   const contactUs = (e) => {
     e.preventDefault();
 
-    // Validate the form fields
     if (!state.name || !state.email || !state.subject || !state.message) {
       toast.error('Please fill in all fields');
       return;
@@ -105,7 +104,6 @@ useEffect(() => {
                       value={state.name}
                     />
                   </div>
-                  {/* <p>{errorMessage?.name}</p> */}
                 </div>
                 <div className="form-group">
                   <label htmlFor="email">Email</label>
@@ -123,7 +121,6 @@ useEffect(() => {
                       value={state.email}
                     />
                   </div>
-                  {/* <p>{errorMessage?.email}</p> */}
                 </div>
                 <div className="form-group">
                   <label htmlFor="subject">Subject</label>
@@ -141,7 +138,6 @@ useEffect(() => {
                       value={state.subject}
                     />
                   </div>
-                  {/* <p>{errorMessage?.subject}</p> */}
                 </div>
                 <div className="form-group">
                   <label htmlFor="message">Message</label>
@@ -159,7 +155,6 @@ useEffect(() => {
                       value={state.message}
                     />
                   </div>
-                  {/* <p>{errorMessage?.message}</p> */}
                 </div>
                 <div className="form-group">
                   <button onClick={contactUs} className="btn btn-block">

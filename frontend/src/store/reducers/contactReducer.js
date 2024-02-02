@@ -1,4 +1,3 @@
-// contactReducer.js
 const initialState = {
     contactData: null,
     error: null,

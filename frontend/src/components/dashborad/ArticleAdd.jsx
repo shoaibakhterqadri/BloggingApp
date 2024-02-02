@@ -29,7 +29,6 @@ const ArticleAdd = ({history}) => {
         img: ''
     })
 
-
     const inputHendle = (e) => {
         setState({
             ...state,
@@ -50,14 +49,12 @@ const ArticleAdd = ({history}) => {
         setUpdateBtn(true)
     }
 
-
     const updateSlug = (e) => {
         e.preventDefault();
         const newSlug = slug.trim().split(' ').join('-');
         setSlug(newSlug)
         setUpdateBtn(false)
     }
-
 
     const imageHendle = (e) => {
         console.log(e.target.files)
@@ -78,35 +75,10 @@ const ArticleAdd = ({history}) => {
         }
     }
 
-    // console.log((text.replace(/<\/?[^>]+(>|$)/g, "").replace(/&nbsp;/g, " ")))
-
     const add = async (e) => {
         e.preventDefault();
 
-        // const apiKey = "AIzaSyCE6QKnae7KqrR0n6oRBcak04LlGejw1EU";
-        // console.log(apiKey);
-
-        // const searchQuery="Engineer Shoaib Akhter Qadri"
-        // console.log("searchQuery "+searchQuery);
-        // const searchQuery = encodeURIComponent(text.replace(/<\/?[^>]+(>|$)/g, ""));
-// const apiUrl = `https://www.googleapis.com/customsearch/v1?q=${searchQuery}&key=${apiKey}`;
-
-        // const searchQuery = text.replace(/<\/?[^>]+(>|$)/g, "");
-        // console.log("API URL is " +apiUrl);
-
         try {
-            // const response = await fetch(apiUrl);
-            // console.log("response "+response);
-            // const data = await response.json();
-            // console.log("data is "+data);
-
-            // if (data.items && data.items.length > 0) {
-            //     toast.error('Plagiarism detected! Article cannot be published.');
-            //     alert("Plagiarism");
-            //     return;
-            // }
-    
-            // Continue with the article submission if no plagiarism is detected
             const { title, image, category, tag } = state;
             const formData = new FormData();
     
@@ -138,8 +110,6 @@ const ArticleAdd = ({history}) => {
         }
     },[articleSuccessMessage])
 
-
-
     return (
         <div className='add-article'>
             <Toaster position={'bottom-center'}
@@ -166,8 +136,7 @@ const ArticleAdd = ({history}) => {
                         <input onChange={titleHendler} value={state.title} type="text" name='title' placeholder='article title' className="form-control" id='title' />
                         {
                             articleError?<p className='error'>{articleError.title}</p>:''
-                        }
-                        
+                        }        
                     </div>
                     <div className="form-group">
                         <label htmlFor="slug">Article slug</label>
@@ -188,7 +157,6 @@ const ArticleAdd = ({history}) => {
                                     return <option key={index} value={c.categorySlug}>{c.categoryName}</option>
                                 }) : ''
                             }
-
                         </select>
                         {
                             articleError?<p className='error'>{articleError.category}</p>:''
@@ -224,8 +192,6 @@ const ArticleAdd = ({history}) => {
                         {
                             articleError?<p className='error'>{articleError.text}</p>:''
                         }
-
-
                     </div>
                     <div className="form-group">
                         <label htmlFor="image">Image</label>
@@ -255,10 +221,6 @@ const ArticleAdd = ({history}) => {
                                     <div className="spinner3"></div>
                                 </div>
                             </button> : <button className="btn btn-block">Add Article</button>
-
-
-
-
                         }
                     </div>
                 </form>

@@ -1,7 +1,6 @@
 const { Schema, model } = require('mongoose');
 
 const articleSchema = new Schema({
-
     adminId: {
         type: String,
         required: true

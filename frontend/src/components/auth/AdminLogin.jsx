@@ -32,8 +32,6 @@ const AdminLogin = ({history}) => {
         }
     },[dispatch,successMessage])
 
-   
-
     useEffect(() => {
         if (errorMessage.error) {
             toast.error(errorMessage.error);
@@ -85,7 +83,6 @@ const AdminLogin = ({history}) => {
                                 </button> : <button className="btn btn-block">
                                     Login
                                 </button>
-
                             }
                         </div>
                     </form>

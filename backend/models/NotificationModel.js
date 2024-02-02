@@ -1,4 +1,5 @@
 const { model, Schema } = require('mongoose');
+
 const notificationSchema = new Schema({
     subject: {
         type: String,

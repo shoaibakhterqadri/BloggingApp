@@ -39,12 +39,6 @@ export const dashboardReducer = (state = indexState, action) => {
             successMessage: ''
         }
     }
-    // if (type === 'GET_SUB_ADMINS_SUCCESS') {
-    //     return {
-    //       ...state,
-    //       subAdmins: payload,
-    //     };
-    // }
     if (type === 'GET_SUB_ADMINS_SUCCESS') {
         return {
           ...state,
@@ -61,7 +55,5 @@ export const dashboardReducer = (state = indexState, action) => {
             ),
           };
     }
-
-      
     return state;
 }

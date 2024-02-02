@@ -3,7 +3,6 @@ const dotEnv = require('dotenv');
 const app = express();
 
 const cors = require('cors');
-
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 
@@ -19,12 +18,10 @@ app.get('/', (req, res) => {
     res.send('server is running')
 })
 
-
 dotEnv.config({
     path: 'backend/config/config.env'
 })
 
-//use middleware-------------
 app.use(cookieParser());
 app.use(bodyParser.json());
 app.use(cors({
@@ -32,15 +29,12 @@ app.use(cors({
     credentials: true
 }));
 
-// router use..............
-
 app.use('/rest-api', authRouter);
 app.use('/rest-api', dashboadRoute);
 app.use('/rest-api', homeRoutes)
 app.use('/rest-api/', homeCommentRoutes)
 app.use('/rest-api', contactRoute); 
 
-// db connect........
 dbConnect();
 
 const PORT = process.env.PORT || 4000

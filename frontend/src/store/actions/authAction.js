@@ -74,7 +74,6 @@ export const user_login = (data) => async (dispatch) => {
     }
 }
 
-
 export const logout_user = ({ role, history }) => async (dispatch) => {
     try {
         await axios.get('http://localhost:5000/rest-api/logout-user', { withCredentials: true });
@@ -92,5 +91,3 @@ export const logout_user = ({ role, history }) => async (dispatch) => {
         console.log(error.response.data)
     }
 }
-
-

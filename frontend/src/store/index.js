@@ -25,7 +25,6 @@ const rootReducer = combineReducers({
 
 const middleware = [ThunkMiddleware];
 
-// Update the store creation to check for the Redux DevTools extension
 const composeEnhancers =
   window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 

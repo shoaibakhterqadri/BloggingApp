@@ -1,5 +1,3 @@
-// AdminInfo.jsx
-
 import React from "react";
 import { Link, useHistory, useLocation } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
@@ -32,13 +30,9 @@ const AdminInfo = ({ profileModelShow, userInfo }) => {
               Profile
             </Link>
           ) : (
-            // subAdmins.map((subAdmin, index) => (
-              <Link
-                to={`/dashborad/sub-admin-profile/`}
-              >
+              <Link to={`/dashborad/sub-admin-profile/`}>
                 Profile
               </Link>
-            // ))
           )}
         </li>
         <li>

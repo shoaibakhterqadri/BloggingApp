@@ -15,6 +15,7 @@ const AllTag = () => {
     const dispatch = useDispatch()
     const { currentPage } = useParams();
     const { parPage, allTag, tagCount,tagSuccessMessage } = useSelector(state => state.dashboradTag);
+    const { userInfo } = useSelector((state) => state.adminReducer);
 
     useEffect(() => {
         if(tagSuccessMessage){
@@ -49,9 +50,12 @@ const AllTag = () => {
                         </div>
                         <span><FaSearch /></span>
                     </div>
-                    <div className="newAdd">
+                    {
+                        userInfo.role==='admin' &&(                    
+                        <div className="newAdd">
                         <Link className='btn' to='/dashborad/add-tag'>Add New</Link>
                     </div>
+                    )}
                 </div>
                 <div className="height-60vh">
                 <div className="categorys">

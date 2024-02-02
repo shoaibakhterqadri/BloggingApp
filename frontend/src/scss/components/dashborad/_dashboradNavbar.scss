@@ -50,19 +50,27 @@
       align-content: center;
       border-radius: 5px;
       background-color: black;
-      color: white;
       cursor: pointer;
       margin-top: 10px;
+      a{
+        color: white;
+        text-decoration: none;
+      }
     }
     .category ul{
       display: flex;
       justify-content: center;
       align-items: center;
+      margin-top: 15px;
       li{
         margin: 0px 8px;
         cursor: pointer;
+        a{
+          color: black;
+          text-decoration: none;
+        }
       }
-      li:hover{
+      li a:hover{
       color: #00a6ff;
       }
     }

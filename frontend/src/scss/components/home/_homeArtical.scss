@@ -33,6 +33,9 @@
             .col-8{
                 .home-artical-details{
                     padding: 8px;
+                    a{
+                        text-decoration: none;
+                    }
                     .title{
                         overflow: hidden;
                         text-overflow: ellipsis;

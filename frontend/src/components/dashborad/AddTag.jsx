@@ -8,7 +8,6 @@ import { useDispatch, useSelector } from "react-redux";
 const AddTag = ({ history }) => {
     const dispatch = useDispatch();
     const { loader, tagError, tagSuccessMessage } = useSelector(state => state.dashboradTag);
-
     const [state, setState] = useState({
         tagName: '',
         tagDes: ''

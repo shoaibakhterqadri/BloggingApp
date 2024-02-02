@@ -20,8 +20,12 @@ const SubadminProfile = () => {
     const [subAdminDetails,setSubAdminDetails]=useState({});
     const dispatch = useDispatch();
     const { allArticle, parPage, articleCount, articleSuccessMessage } = useSelector(state => state.dashboradArtical)
-
+    const { userInfo } = useSelector((state) => state.adminReducer);
     const { currentPage } = useParams();
+
+    const { subAdmins, subAdminCount } = useSelector(
+        (state) => state.dashboardIndex
+      );
 
     useEffect(() => {
         dispatch(get_all_article(currentPage ? currentPage.split('-')[1] : 1, ''))
@@ -35,10 +39,6 @@ const SubadminProfile = () => {
         }
     }, [dispatch, articleSuccessMessage])
 
-    console.log(subAdminEmail);
-    console.log(subAdminDetails);
-    const user = 'admin'
-
     useEffect(() => {
         axios.get(`http://localhost:5000/rest-api/get-sub-admin-details/${subAdminEmail}`)
           .then((response) => {
@@ -48,6 +48,8 @@ const SubadminProfile = () => {
             console.log('Error fetching sub-admin details:', error);
           });
       }, [subAdminEmail]);
+
+      const subAdminArticleCount = allArticle.filter(article => article.adminName === subAdminDetails.name).length;
 
 
     return (
@@ -67,7 +69,7 @@ const SubadminProfile = () => {
                 <div className="profile-image-article">
                     <div className="profile-image-details">
                         <div className="image">
-                            <img src={subAdminDetails.image} alt="" />
+                            <img src={subAdminDetails.image} alt="image" />
                         </div>
                         <ul className='profile-details'>
                             <li>
@@ -75,11 +77,12 @@ const SubadminProfile = () => {
                                 <span>{subAdminDetails.name}</span>
                             </li>
                             {
-                                user === 'admin' && <li>
+                                userInfo === 'admin' && (
+                                <li>
                                     <span>Email : </span>
                                     <span>{subAdminDetails.email}</span>
                                 </li>
-                            }
+                            )}
                             <li>
                                 <span>Role : </span>
                                 <span>{subAdminDetails.role}</span>
@@ -90,7 +93,7 @@ const SubadminProfile = () => {
                             </li>
                             <li>
                                 <span>Article Write : </span>
-                                <span>3</span>
+                                <span>{subAdminArticleCount}</span>
                             </li>
                         </ul>
                     </div>

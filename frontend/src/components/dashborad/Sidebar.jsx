@@ -7,6 +7,7 @@ import { HiUserGroup } from "react-icons/hi";
 import { BsChevronRight } from "react-icons/bs";
 import { BsBell, BsListUl } from "react-icons/bs";
 import DashboradNavbar from './DashboradNavbar';
+import { useSelector } from "react-redux";
 
 const Sidebar = ({openLeftMenu}) => {
     // const [sidebarVisible, setSidebarVisible] = useState(false);
@@ -29,6 +30,7 @@ const Sidebar = ({openLeftMenu}) => {
         
     };
 
+    const { userInfo } = useSelector((state) => state.adminReducer);
     const [sidebarVisible, setSidebarVisible] = useState(true);
 
     // const openLeftMenu = () => {
@@ -157,7 +159,8 @@ const Sidebar = ({openLeftMenu}) => {
             <h2 className='w3-button w3-large w3-left w3-margin toggle-button' onClick={closeLeftMenu}>&#9776;</h2>
             {/* <label htmlFor="" className='dash'><span>SA</span></label> */}
             <label className='bar' htmlFor="sidebar"><span><BsListUl /></span></label>
-            <h2><Link to='/dashborad'>Shoaib</Link></h2>
+            <h3><Link to={`/`}>BlogifyBlog</Link></h3>
+
             </div>
 
             <ul>
@@ -166,14 +169,14 @@ const Sidebar = ({openLeftMenu}) => {
                 <input type="checkbox" id='tag' />
                 <input type="checkbox" id='user' />
                 <li>
-                    <Link to='/dashborad'>
+                <Link className='link' to='/dashborad'>
                         <label>
                             <h3>
                                 <span><AiFillDashboard /></span>
                                 <span>Dashborad</span>
                             </h3>
                         </label>
-                    </Link>
+                </Link>
                 </li>
                 <li>
                     <label htmlFor='article'>
@@ -207,10 +210,14 @@ const Sidebar = ({openLeftMenu}) => {
                             <span><FaEye /></span>
                             <span>All Category</span>
                         </Link>
-                        <Link to='/dashborad/add-category'>
-                            <span><FaPlusCircle/></span>
-                            <span>Add Category</span>
-                        </Link>
+                        {userInfo.role === 'admin' && (
+                <Link to='/dashborad/add-category'>
+                  <span>
+                    <FaPlusCircle />
+                  </span>
+                  <span>Add Category</span>
+                </Link>
+              )}
                     </div>
                 </li>
                 <li>
@@ -226,10 +233,14 @@ const Sidebar = ({openLeftMenu}) => {
                             <span><FaEye /></span>
                             <span>All Tag</span>
                         </Link>
-                        <Link to='/dashborad/add-tag'>
-                            <span><FaPlusCircle/></span>
-                            <span>Add Tag</span>
-                        </Link>
+                        {userInfo.role === 'admin' && (
+                <Link to='/dashborad/add-category'>
+                  <span>
+                    <FaPlusCircle />
+                  </span>
+                  <span>Add Tag</span>
+                </Link>
+              )}
                     </div>
                 </li>
                 <li>

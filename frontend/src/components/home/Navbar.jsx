@@ -55,22 +55,22 @@ const Navbar = ({ nav }) => {
                 <Link to="/">Home</Link>
               </li>
               <li className="link-item">
-                <Link to="/">Education</Link>
+                <Link to="/artical/category/Education">Education</Link>
               </li>
               <li className="link-item">
-                <Link to="/">Technology</Link>
+                <Link to="/artical/category/Technology">Technology</Link>
               </li>
               <li className="link-item">
-                <Link to="/">Business</Link>
+                <Link to="/artical/category/Business">Business</Link>
               </li>
               <li className="link-item">
-                <Link to="/">News</Link>
+                <Link to="/artical/category/News and Current Event">News</Link>
               </li>
               <li className="link-item">
-                <Link to="/">Health</Link>
+                <Link to="/artical/category/Health and Fitness">Health</Link>
               </li>
               <li className="link-item">
-                <Link to="/">Religous</Link>
+                <Link to="/artical/category/Religious">Religous</Link>
               </li>
               <li className="link-item">
                 <Link to="/writeforus">WriteForUs</Link>

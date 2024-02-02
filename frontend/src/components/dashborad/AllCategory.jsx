@@ -16,6 +16,7 @@ const AllCategory = () => {
     const dispatch = useDispatch()
     const { currentPage } = useParams();
     const { parPage, allCategory, categoryCount,categorySuccessMessage } = useSelector(state => state.dashboradCategory);
+    const { userInfo } = useSelector((state) => state.adminReducer);
 
     useEffect(() => {
         if(categorySuccessMessage){
@@ -51,9 +52,12 @@ const AllCategory = () => {
                         </div>
                         <span><FaSearch /></span>
                     </div>
+                    {
+                        userInfo.role==='admin' && (
                     <div className="newAdd">
                         <Link className='btn' to='/dashborad/add-category'>Add New</Link>
                     </div>
+                    )}
                 </div>
                 <div className="height-60vh">
                     <div className="categorys">

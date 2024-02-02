@@ -62,7 +62,7 @@ const DashboradIndex = () => {
                             <span>Visitoes</span>
                         </div>
                     </div>
-                    <Link className="single-card" to="">
+                    <Link className="single-card" to="/dashborad/all-article">
                         <div className="card_icon">
                             <BsFillPeopleFill />
                         </div>
@@ -71,7 +71,7 @@ const DashboradIndex = () => {
                             <span>Articles</span>
                         </div>
                     </Link>
-                    <Link className="single-card" to="">
+                    <Link className="single-card" to="/dashborad/all-category">
                         <div className="card_icon">
                             <FaRegCaretSquareRight />
                         </div>
@@ -80,7 +80,7 @@ const DashboradIndex = () => {
                             <span>Categorys</span>
                         </div>
                     </Link>
-                    <Link className="single-card" to="">
+                    <Link className="single-card" to="/dashborad/all-tag">
                         <div className="card_icon">
                             <FaTag />
                         </div>
@@ -89,7 +89,7 @@ const DashboradIndex = () => {
                             <span>Tags</span>
                         </div>
                     </Link>
-                    <Link to='/deshborad/all-sub-admin' className="single-card">
+                    <Link to='/dashborad/all-sub-admin' className="single-card">
                         <div className="card_icon">
                             <FaRegUser />
                         </div>

@@ -40,7 +40,7 @@ const Footer = () => {
                                             </div>
                                             <div className="col-8">
                                                 <div className="title-link">
-                                                    <Link to='/artical/details/sdfhgs'>{art.title}</Link>
+                                                    <Link to={`/artical/details/${art.slug}`}>{art.title}</Link>
                                                     <br />
                                                     <span>{moment(art.createdAt).fromNow()}</span>
                                                 </div>
@@ -115,7 +115,7 @@ const Footer = () => {
                                             </div>
                                             <div className="col-8">
                                                 <div className="title-link">
-                                                    <Link to='/artical/details/sdfhgs'>{art.title}</Link>
+                                                    <Link to={`/artical/details/${art.slug}`}>{art.title}</Link>
                                                     <br />
                                                     <span>{moment(art.createdAt).fromNow()}</span>
                                                 </div>

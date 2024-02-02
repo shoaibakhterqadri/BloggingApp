@@ -26,7 +26,7 @@ const PopularArtical = () => {
                 </div>
                 <div className="col-8">
                     <div className="title-time">
-                        <Link to={`/artical/details/jg`}>{art.title.slice(0,50)}</Link>
+                        <Link to={`/artical/details/${art.slug}`}>{art.title.slice(0,50)}</Link>
                         <br />
                         <span>{moment(art.createdAt).fromNow()}</span>
                     </div>

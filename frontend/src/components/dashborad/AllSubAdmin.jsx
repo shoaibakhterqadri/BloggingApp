@@ -2,18 +2,24 @@ import React, { useEffect } from "react";
 import Helmet from "react-helmet";
 import { FaSearch } from "react-icons/fa";
 import { MdDelete, MdEdit } from "react-icons/md";
-import { Link,useHistory } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { blockUnblockSubAdmins, getSubAdmins } from "./../../store/actions/Dashborad/dashboardAction";
 
 import Pagination from "../home/Pagination";
 
+// Function to encrypt email except for @gmail.com
+const encryptEmail = (email) => {
+  if (email.endsWith("@gmail.com")) {
+    return email.replace(/./g, '*');
+  } 
+};
+
 const AllSubAdmin = () => {
   const user = "admin";
   const history = useHistory();
-  // const status = "block";
   const dispatch = useDispatch();
-  
+
   const { subAdmins, subAdminCount } = useSelector(
     (state) => state.dashboardIndex
   );
@@ -24,24 +30,17 @@ const AllSubAdmin = () => {
     dispatch(getSubAdmins());
   }, [dispatch]);
 
-
-
-  const handleBlockUnblock =async (subAdminId, accessStatus) => {
+  const handleBlockUnblock = async (subAdminId, accessStatus) => {
     // Dispatch the action to block/unblock sub-admin
-   await dispatch(blockUnblockSubAdmins(subAdminId, accessStatus));
+    await dispatch(blockUnblockSubAdmins(subAdminId, accessStatus));
 
-   const updatedSubAdmins = subAdmins.map((subAdmin) =>
-   subAdmin._id === subAdminId ? { ...subAdmin, accessStatus } : subAdmin
- );
- dispatch({ type: 'GET_SUB_ADMINS_SUCCESS', payload: updatedSubAdmins });
+    const updatedSubAdmins = subAdmins.map((subAdmin) =>
+      subAdmin._id === subAdminId ? { ...subAdmin, accessStatus } : subAdmin
+    );
+    dispatch({ type: 'GET_SUB_ADMINS_SUCCESS', payload: updatedSubAdmins });
 
- const newPath = `${history.location.pathname}/${subAdminId}`;
- history.push(newPath);
-
-
-    // const newPath = `${history.location.pathname}/${subAdminId}`;
-
-    // history.push(newPath);
+    const newPath = `${history.location.pathname}/${subAdminId}`;
+    history.push(newPath);
   };
 
   return (
@@ -54,21 +53,9 @@ const AllSubAdmin = () => {
           <div className="numof">
             <h2>Sub Admin ({subAdminCount})</h2>
           </div>
-          <div className="searchOf">
-            <div className="search">
-              <input
-                type="text"
-                placeholder="search article"
-                className="form-control"
-              />
-            </div>
-            <span>
-              <FaSearch />
-            </span>
-          </div>
           <div className="newAdd">
-            <Link className="btn" to="/dashborad/all-user">
-              User
+            <Link className="btn" to={`/dashborad/sub-admin-profile/${userInfo.email}`}>
+              Profile
             </Link>
           </div>
         </div>
@@ -90,7 +77,13 @@ const AllSubAdmin = () => {
                     <tr key={subAdmin._id}>
                       <td data-label="No">{index + 1}</td>
                       <td data-label="Name">{subAdmin.userName}</td>
-                      <td data-label="Email">{subAdmin.email}</td>
+                      <td data-label="Email">
+                        {userInfo.role === "admin" ? (
+                          subAdmin.email // Show original email to admin
+                        ) : (
+                          encryptEmail(subAdmin.email) // Encrypt email for sub-admins
+                        )}
+                      </td>
                       <td data-label="Image" className="image">
                         <img src={subAdmin.image} alt="image" />
                       </td>
@@ -104,7 +97,7 @@ const AllSubAdmin = () => {
                             onClick={() =>
                               handleBlockUnblock(
                                 subAdmin._id,
-                                subAdmin.accessStatus === "unblock"? "block": "unblock"
+                                subAdmin.accessStatus === "unblock" ? "block" : "unblock"
                               )
                             }
                           >

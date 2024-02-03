@@ -112,6 +112,31 @@ const ArticleAdd = ({history}) => {
 
     return (
         <div className='add-article'>
+            <Helmet>
+        <title>BlogifyBlog - Add Article</title>
+        <meta
+          name='description'
+          content='Explore the dashboard of BlogifyBlog. Manage articles, categories, tags, users, and more. Stay organized and contribute to the thriving community. BlogifyBlog - Your Dashboard for Content Management.'
+        />
+        <meta name='robots' content='index, follow' />
+        <meta
+          name='keywords'
+          content='dashboard, manage, articles, categories, tags, users, BlogifyBlog, content management, Education, Technology,  Science, Religious, Health, Fitness, Business, Finance, Food, Cooking, Entertainment, Sports, Travel, Social Media'
+        />
+        <meta name='author' content='BlogifyBlog' />
+        <meta property='og:title' content='BlogifyBlog - Dashboard' />
+        <meta
+          property='og:description'
+          content='Explore the dashboard of BlogifyBlog. Manage articles, categories, tags, users, and more. Stay organized and contribute to the thriving community. BlogifyBlog - Your Dashboard for Content Management.'
+        />
+        <meta property='og:type' content='website' />
+        <meta property='og:url' content='https://www.blogifyblog.com/dashborad' />
+        <meta property='og:image' content='https://www.blogifyblog.com/app-image.png' />
+        <meta
+          property='article:tag'
+          content='Education, Technology,  Science, Religious, Health, Fitness, Business, Finance, Food, Cooking, Entertainment, Sports, Travel, Social Media'
+        />
+      </Helmet>
             <Toaster position={'bottom-center'}
                 reverseOrder={false}
                 toastOptions={

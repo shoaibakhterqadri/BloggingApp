@@ -98,7 +98,7 @@ const ArticleEdit = ({history}) => {
     return (
         <div className='add-article'>
             <Helmet>
-                <title>Edit Article</title>
+                <title>BlogifyBlog - Edit Article</title>
             </Helmet>
             <div className="add">
                 <div className="title-show-article">

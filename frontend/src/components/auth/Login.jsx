@@ -5,7 +5,9 @@ import Navbar from '../home/Navbar';
 import { user_login } from '../../store/actions/authAction'
 import { Link } from "react-router-dom";
 import toast, { Toaster } from 'react-hot-toast'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux';
+import { Helmet } from 'react-helmet';
+
 const Login = ({ history }) => {
     const dispatch = useDispatch();
     const { errorMessage, loader, authenticate } = useSelector(state => state.adminReducer)
@@ -38,6 +40,18 @@ const Login = ({ history }) => {
         dispatch(user_login(state))
     }
     return <>
+     <Helmet>
+    <title>Login - BlogifyBlog</title>
+    <meta name='description' content='Login to the sub-admin panel of BlogifyBlog. Secure access to manage your blog and settings.' />
+    <meta name='robots' content='index, follow' />
+    <meta name='keywords' content='login, secure login, authentication' />
+    <meta name='author' content='BlogifyBlog' />
+    <meta property='og:title' content='Login - BlogifyBlog' />
+    <meta property='og:description' content='Login to the sub-admin panel of BlogifyBlog. Secure access to manage your blog and settings.' />
+    <meta property='og:type' content='website' />
+    <meta property='og:url' content='https://www.blogifyblog.com/login' />
+    <meta property='og:image' content='https://www.yourblog.com/app-image.png' />
+</Helmet>
         <Navbar />
         <div className="login">
             <Toaster

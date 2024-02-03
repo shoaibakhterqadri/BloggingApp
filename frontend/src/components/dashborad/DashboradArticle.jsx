@@ -46,7 +46,7 @@ const DashboradArticle = () => {
   return (
     <div className="dashborad-article">
       <Helmet>
-        <title>All Article</title>
+        <title>BlogifyBlog - All Article</title>
       </Helmet>
       <Toaster
         position={"bottom-center"}

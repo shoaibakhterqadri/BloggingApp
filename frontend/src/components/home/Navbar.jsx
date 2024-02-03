@@ -4,6 +4,7 @@ import moment from "moment";
 import { BsListUl } from "react-icons/bs";
 import { useSelector } from "react-redux";
 import AdminInfo from "../dashborad/AdminInfo";
+import { Helmet } from "react-helmet";
 
 const Navbar = ({ nav }) => {
   const [profileModelShow, setProfileModelShow] = useState(false);
@@ -28,6 +29,21 @@ const Navbar = ({ nav }) => {
   };
 
   return (
+    <>
+     <Helmet>
+                <title>BlogifyBlog - Home</title>
+                <meta name="description" content="Explore a diverse world of knowledge on BlogifyBlog. Immerse yourself in a vast array of categories and tags, covering topics from technology and science to health, business, and entertainment. Read, learn, and contribute by publishing your own articles. Join our thriving community where curiosity meets expertise. Start your journey with BlogifyBlog today!" />
+                <meta name="robots" content="index, follow" />
+                <meta name="keywords" content="blog, articles, categories, tags, trends, insights, community, BlogifyBlog, Education, Technology,  Science, Religious, Health, Fitness, Business, Finance, Food, Cooking, Entertainment, Sports, Travel, Social Media" />
+                <meta name="author" content="BlogifyBlog" />
+                <meta property="og:title" content="BlogifyBlog - Home" />
+                <meta property="og:description" content="Explore a diverse world of knowledge on BlogifyBlog. Immerse yourself in a vast array of categories and tags, covering topics from technology and science to health, business, and entertainment. Read, learn, and contribute by publishing your own articles. Join our thriving community where curiosity meets expertise. Start your journey with BlogifyBlog today!" />
+                <meta property="og:type" content="website" />
+                <meta property="og:url" content="https://www.blogifyblog.com"/>
+                <meta property="og:image" content="https://www.blogifyblog.com/app-image.png"/>
+                <meta property="article:tag" content="Education, Technology,  Science, Religious, Health, Fitness, Business, Finance, Food, Cooking, Entertainment, Sports, Travel, Social Media" />
+        </Helmet>
+    
     <div ref={nav} id="navbar" className="navbar">
       <div className="container">
         <div className="row">
@@ -59,9 +75,9 @@ const Navbar = ({ nav }) => {
               <li className="link-item">
                 <Link to="/artical/category/News and Current Event">News</Link>
               </li>
-              <li className="link-item">
+              {/* <li className="link-item">
                 <Link to="/artical/category/Health and Fitness">Health</Link>
-              </li>
+              </li> */}
               <li className="link-item">
                 <Link to="/artical/category/Religious">Religous</Link>
               </li>
@@ -96,6 +112,7 @@ const Navbar = ({ nav }) => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

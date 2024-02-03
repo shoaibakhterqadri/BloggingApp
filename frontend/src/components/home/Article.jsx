@@ -2,10 +2,27 @@ import React from "react";
 import moment from "moment";
 import { Link } from "react-router-dom";
 import htmlToText from "html-react-parser";
+import { Helmet } from "react-helmet";
 
 const Article = ({ index, art }) => {
   return (
     <>
+    <Helmet>
+        <title>{`BlogifyBlog - Home`}</title>
+        <meta name="description" content={art.articleText} />
+        <meta name="robots" content="index, follow" />
+        <meta
+          name="keywords"
+          content="Education, Technology,  Science, Religious, Health, Fitness, Business, Finance, Food, Cooking, Entertainment, Sports, Travel, Social Media"/>
+        <meta name="author" content="BlogifyBlog" />
+        <meta property="og:title" content={art.title} />
+        <meta property="og:description" content={art.articleText} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={`https://www.blogifyblog.com/artical/details/${art.slug}`}/>
+        <meta property="og:image" content={`https://www.blogifyblog.com/articalImage/${art.image}`}/>
+        <meta property="article:tag" content="Education, Technology,  Science, Religious, Health, Fitness, Business, Finance, Food, Cooking, Entertainment, Sports, Travel, Social Media" />
+      </Helmet>
+
       <div key={index} className="home-artical">
         <div className="row">
           <div className="col-4">

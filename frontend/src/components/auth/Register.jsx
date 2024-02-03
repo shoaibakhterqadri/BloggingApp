@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { register } from "../../store/actions/authAction";
 import { useEffect } from "react";
 import toast, { Toaster } from "react-hot-toast";
+import { Helmet } from 'react-helmet';
 
 const Register = ({ history }) => {
   const dispatch = useDispatch();
@@ -73,6 +74,18 @@ const Register = ({ history }) => {
   }, []);
   return (
     <>
+     <Helmet>
+    <title>Register - BlogifyBlog</title>
+    <meta name='description' content='Register to the sub-admin panel of BlogifyBlog. Secure access to manage your blog and settings.' />
+    <meta name='robots' content='index, follow' />
+    <meta name='keywords' content='Register, secure Register, authentication' />
+    <meta name='author' content='BlogifyBlog' />
+    <meta property='og:title' content='Register - BlogifyBlog' />
+    <meta property='og:description' content='Register to the sub-admin panel of BlogifyBlog. Secure access to manage your blog and settings.' />
+    <meta property='og:type' content='website' />
+    <meta property='og:url' content='https://www.blogifyblog.com/register' />
+    <meta property='og:image' content='https://www.yourblog.com/app-image.png' />
+</Helmet>
       <Navbar />
       <div className="register">
         <Toaster

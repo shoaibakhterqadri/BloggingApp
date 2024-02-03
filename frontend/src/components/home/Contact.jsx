@@ -7,6 +7,7 @@ import { contactInfo } from '../../store/actions/home/contactAction';
 import { useEffect } from 'react';
 import toast, { Toaster } from 'react-hot-toast';
 import '../../scss/components/home/_contact.scss';
+import { Helmet } from "react-helmet";
 
 const Contact = () => {
   const dispatch = useDispatch();
@@ -71,6 +72,21 @@ useEffect(() => {
 
   return (
     <>
+    <Helmet>
+        <title>Contact Us - BlogifyBlog</title>
+        <meta name="description" content="Contact BlogifyBlog for any inquiries, feedback, or collaboration opportunities. Reach out to us via email, and we'll get back to you as soon as possible." />
+        <meta name="robots" content="index, follow" />
+        <meta
+          name="keywords"
+          content="Contact, Inquiry, Feedback, Collaboration, Email, Message, BlogifyBlog, Education, Technology, Science, Religious, Health, Fitness, Business, Finance, Food, Cooking, Entertainment, Sports, Travel, Social Media"
+        />
+        <meta name="author" content="BlogifyBlog" />
+        <meta property="og:title" content="Contact Us - BlogifyBlog" />
+        <meta property="og:description" content="Contact BlogifyBlog for any inquiries, feedback, or collaboration opportunities. Reach out to us via email, and we'll get back to you as soon as possible." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.blogifyblog.com/contact" />
+      </Helmet>
+
       <Navbar />
       <div className="contact-page">
         <div className="contact">

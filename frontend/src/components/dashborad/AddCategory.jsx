@@ -48,7 +48,7 @@ const AddCategory = ({history}) => {
                 }
             />
             <Helmet>
-                <title>Category add</title>
+                <title>BlogifyBlog - Category Add</title>
             </Helmet>
             <div className="added">
                 <div className="title-show-article">

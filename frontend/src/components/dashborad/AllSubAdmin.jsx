@@ -41,7 +41,7 @@ const AllSubAdmin = () => {
   return (
     <div className="all-sub-admin">
       <Helmet>
-        <title>Sub admin</title>
+        <title> BlogifyBlog - Sub Admin</title>
       </Helmet>
       <div className="elements-numberOf-search-add_new">
         <div className="numof-search-newAdd">

@@ -5,6 +5,7 @@ import Navbar from '../home/Navbar';
 import toast, { Toaster } from "react-hot-toast";
 import { useSelector, useDispatch } from "react-redux";
 import { admin_login } from "../../store/actions/authAction";
+import { Helmet } from 'react-helmet';
 
 const AdminLogin = ({history}) => {
     const dispatch = useDispatch();
@@ -40,6 +41,19 @@ const AdminLogin = ({history}) => {
     }, [errorMessage.error])
 
     return <>
+    <Helmet>
+    <title>Admin Login - BlogifyBlog</title>
+    <meta name='description' content='Login to the admin panel of BlogifyBlog. Secure access to manage your blog and settings.' />
+    <meta name='robots' content='noindex, nofollow' />
+    <meta name='keywords' content='admin login, secure login, blog administration, authentication' />
+    <meta name='author' content='BlogifyBlog' />
+    <meta property='og:title' content='Admin Login - BlogifyBlog' />
+    <meta property='og:description' content='Login to the admin panel of BlogifyBlog. Secure access to manage your blog and settings.' />
+    <meta property='og:type' content='website' />
+    <meta property='og:url' content='https://www.blogifyblog.com/admin/login' />
+    <meta property='og:image' content='https://www.yourblog.com/app-image.png' />
+</Helmet>
+
         <Navbar />
         <div className="admin_login">
             <Toaster position={'bottom-center'}

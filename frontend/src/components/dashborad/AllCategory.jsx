@@ -28,7 +28,7 @@ const AllCategory = () => {
     return (
         <div className='all-category'>
             <Helmet>
-                <title>All Category</title>
+                <title>BlogifyBlog - All Category</title>
             </Helmet>
             <Toaster position={'bottom-center'}
                 reverseOrder={false}

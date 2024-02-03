@@ -47,7 +47,7 @@ const AddTag = ({ history }) => {
                 }
             />
             <Helmet>
-                <title>Tag add</title>
+                <title>BlogifyBlog - Tag Add</title>
             </Helmet>
             <div className="added">
                 <div className="title-show-article">

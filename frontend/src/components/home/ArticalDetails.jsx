@@ -14,6 +14,7 @@ import {
 } from "../../store/actions/home/articleReadAction";
 import htmlParser from "html-react-parser";
 import moment from "moment";
+import { Helmet } from "react-helmet";
 
 const ArticalDetails = () => {
   const dispath = useDispatch();
@@ -60,140 +61,158 @@ const ArticalDetails = () => {
     dispath(user_article_dislike(obj));
   };
   return (
-    <div className="article-details">
-      <div className="path">
-        <Link to="/">Home</Link>
-        <span className="arrow">
-          <BsChevronRight />
-        </span>
-        <Link to={`/artical/category/${read_article?.category_slug}` || ""}>
-          {read_article?.category}
-        </Link>
-        <span className="arrow">
-          <BsChevronRight />
-        </span>
-        <span>{read_article?.title}</span>
-      </div>
-      <div className="title">
-        <h3>
-          <Link to="#">{read_article?.title}</Link>
-        </h3>
-      </div>
-      <div className="auth-time">
-        <div className="auth">
-          <h4>
-            <AiFillTag />
-          </h4>
-          <span>
-            <Link to={`/artical/tag/${read_article?.tag_slug}` || ""}>
-              {read_article?.tag}
-            </Link>
+    <>
+      <Helmet>
+        <title>{`${read_article?.title} - BlogifyBlog`}</title>
+        <meta name="description" content={read_article.articleText} />
+        <meta name="robots" content="index, follow" />
+        <meta
+          name="keywords"
+          content="Education, Technology,  Science, Religious, Health, Fitness, Business, Finance, Food, Cooking, Entertainment, Sports, Travel, Social Media"/>
+        <meta name="author" content="BlogifyBlog" />
+        <meta property="og:title" content={read_article?.title} />
+        <meta property="og:description" content={read_article.articleText} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={`https://www.blogifyblog.com/artical/details/${read_article?.title}`}/>
+        <meta property="og:image" content={`https://www.blogifyblog.com/articalImage/${read_article?.image}`}/>
+        <meta property="article:tag" content="Education, Technology,  Science, Religious, Health, Fitness, Business, Finance, Food, Cooking, Entertainment, Sports, Travel, Social Media" />
+      </Helmet>
+
+      <div className="article-details">
+        <div className="path">
+          <Link to="/">Home</Link>
+          <span className="arrow">
+            <BsChevronRight />
           </span>
+          <Link to={`/artical/category/${read_article?.category_slug}` || ""}>
+            {read_article?.category}
+          </Link>
+          <span className="arrow">
+            <BsChevronRight />
+          </span>
+          <span>{read_article?.title}</span>
         </div>
-        <div className="time">
-          {read_article && (
-            <span>{moment(read_article.createdAt).fromNow()}</span>
+        <div className="title">
+          <h3>
+            <Link to="#">{read_article?.title}</Link>
+          </h3>
+        </div>
+        <div className="auth-time">
+          <div className="auth">
+            <h4>
+              <AiFillTag />
+            </h4>
+            <span>
+              <Link to={`/artical/tag/${read_article?.tag_slug}` || ""}>
+                {read_article?.tag}
+              </Link>
+            </span>
+          </div>
+          <div className="time">
+            {read_article && (
+              <span>{moment(read_article.createdAt).fromNow()}</span>
+            )}
+          </div>
+        </div>
+        <div className="home-artical-image">
+          <img
+            src={`http://localhost:3000/articalImage/${read_article?.image}`}
+            alt=""
+          />
+        </div>
+
+        <div className="home-artical-text">
+          {read_article?.articleText ? (
+            <div>{htmlParser(read_article.articleText)}</div>
+          ) : (
+            <p>No article text available</p>
           )}
         </div>
-      </div>
-      <div className="home-artical-image">
-        <img
-          src={`http://localhost:3000/articalImage/${read_article?.image}`}
-          alt=""
-        />
-      </div>
-
-      <div className="home-artical-text">
-        {read_article?.articleText ? (
-          <div>{htmlParser(read_article.articleText)}</div>
-        ) : (
-          <p>No article text available</p>
-        )}
-      </div>
-      <div className="like-dislike-view">
-        <div className="like-dislike">
-          <div className="dislike">
-            {userInfo && userInfo.role === "user" ? (
-              <button
-                onClick={article_dislike}
-                className={dislike_status === "dislike" ? "icon red" : "icon"}
-              >
-                <AiFillDislike />
-              </button>
-            ) : (
-              <button disabled className="icon">
-                <AiFillDislike />
-              </button>
-            )}
-            <div className="like-number">({dislike})</div>
-          </div>
-          <div className="like">
-            {userInfo && userInfo.role === "user" ? (
-              <button
-                onClick={article_like}
-                className={like_status === "like" ? "icon blue" : "icon"}
-              >
-                <AiFillLike />
-              </button>
-            ) : (
-              <button disabled className="icon">
-                <AiFillLike />
-              </button>
-            )}
-            <div className="dislike-number">({like})</div>
+        <div className="like-dislike-view">
+          <div className="like-dislike">
+            <div className="dislike">
+              {userInfo && userInfo.role === "user" ? (
+                <button
+                  onClick={article_dislike}
+                  className={dislike_status === "dislike" ? "icon red" : "icon"}
+                >
+                  <AiFillDislike />
+                </button>
+              ) : (
+                <button disabled className="icon">
+                  <AiFillDislike />
+                </button>
+              )}
+              <div className="like-number">({dislike})</div>
+            </div>
+            <div className="like">
+              {userInfo && userInfo.role === "user" ? (
+                <button
+                  onClick={article_like}
+                  className={like_status === "like" ? "icon blue" : "icon"}
+                >
+                  <AiFillLike />
+                </button>
+              ) : (
+                <button disabled className="icon">
+                  <AiFillLike />
+                </button>
+              )}
+              <div className="dislike-number">({like})</div>
+            </div>
           </div>
         </div>
-      </div>
-      <div className="read-more">
-        <span>Read more : </span>
-        <Link to={readMore?.slug || ""}>{readMore?.title}</Link>
-      </div>
-      <div className="more-tags">
-        <span>Tags</span>
-        {moreTag.length > 0 &&
-          moreTag.map((teg, index) => (
-            <Link to={`/artical/tag/${teg}`} key={index}>
-              {teg.split("-").join(" ") || ""}
-            </Link>
-          ))}
-      </div>
-      {/* <div className="social-icons">
+        <div className="read-more">
+          <span>Read more : </span>
+          <Link to={readMore?.slug || ""}>{readMore?.title}</Link>
+        </div>
+        <div className="more-tags">
+          <span>Tags</span>
+          {moreTag.length > 0 &&
+            moreTag.map((teg, index) => (
+              <Link to={`/artical/tag/${teg}`} key={index}>
+                {teg.split("-").join(" ") || ""}
+              </Link>
+            ))}
+        </div>
+        {/* <div className="social-icons">
                 <a className='l1' href=""><FaFacebookSquare /></a>
                 <a className='l2' href=""><FaTwitterSquare /></a>
                 <a className='l3' href=""><FaGithubSquare /></a>
                 <a className='l4' href=""><ImLinkedin /></a>
             </div> */}
-      <div className="related-article">
-        <div className="more">
-          <h3>Related Articles</h3>
+        <div className="related-article">
+          <div className="more">
+            <h3>Related Articles</h3>
+          </div>
+          <div className="articles">
+            {related_article.length > 0 ? (
+              related_article.map((art, index) => (
+                <Link
+                  key={index}
+                  to={`/artical/details/${art.slug}` || ""}
+                  className="article"
+                >
+                  <img
+                    src={`http://localhost:3000/articalImage/${art?.image}`}
+                    alt=""
+                  />
+                  <span>
+                    very popular during the Renaissance. The first line of
+                  </span>
+                </Link>
+              ))
+            ) : (
+              <span>Related article not found</span>
+            )}
+          </div>
         </div>
-        <div className="articles">
-          {related_article.length > 0 ? (
-            related_article.map((art, index) => (
-              <Link
-                key={index}
-                to={`/artical/details/${art.slug}` || ""}
-                className="article"
-              >
-                <img
-                  src={`http://localhost:3000/articalImage/${art?.image}`}
-                  alt=""
-                />
-                <span>
-                  very popular during the Renaissance. The first line of
-                </span>
-              </Link>
-            ))
-          ) : (
-            <span>Related article not found</span>
-          )}
+        <div className="comment_title">
+          <h3>Article comments</h3>
         </div>
+        <Comments />
       </div>
-      <div className="comment_title">
-        <h3>Article comments</h3>
-      </div>
-      <Comments />
-    </div>
+    </>
   );
 };
 

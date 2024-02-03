@@ -1,64 +1,42 @@
-// WriteForUs.jsx
-
 import React, { useState } from 'react';
-import { BsAt } from 'react-icons/bs';
-import { FaUser, FaEnvelope, FaBook } from 'react-icons/fa';
 import Navbar from '../home/Navbar';
-import { useDispatch, useSelector } from 'react-redux';
-import { register } from '../../store/actions/authAction';
 import toast, { Toaster } from 'react-hot-toast';
 import { Link } from "react-router-dom";
 import '../../scss/components/home/_writeForUs.scss';
+import { Helmet } from "react-helmet";
 
 const WriteForUs = () => {
-  const dispatch = useDispatch();
-  const { errorMessage, loader } = useSelector((state) => state.adminReducer);
-  const [state, setState] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    image: '',
-  });
-
-  const [showImage, setShowImage] = useState('');
-
-  const inputHandle = (e) => {
-    setState({
-      ...state,
-      [e.target.name]: e.target.value,
-    });
-  };
-
-  const imageHandle = (e) => {
-    if (e.target.files.length !== 0) {
-      setState({
-        ...state,
-        image: e.target.files[0],
-      });
-
-      const reader = new FileReader();
-      reader.onload = () => {
-        setShowImage(reader.result);
-      };
-      reader.readAsDataURL(e.target.files[0]);
-    }
-  };
-
-  const user_register = (e) => {
-    e.preventDefault();
-
-    const formData = new FormData();
-
-    formData.append('name', state.name);
-    formData.append('email', state.email);
-    formData.append('subject', state.subject);
-    formData.append('image', state.image);
-
-    dispatch(register(formData));
-  };
 
   return (
     <>
+     <Helmet>
+        <title>BlogifyBlog - Write For Us</title>
+        <meta
+          name="description"
+          content="Become a contributor on BlogifyBlog! Share your knowledge and insights on various topics. Explore diverse perspectives and engage with our community. Start your writing journey with BlogifyBlog - Write For Us."
+        />
+        <meta name="robots" content="index, follow" />
+        <meta
+          name="keywords"
+          content="blog, articles, categories, tags, trends, insights, community, BlogifyBlog, Write For Us, contribute, guest posting, Education, Technology,  Science, Religious, Health, Fitness, Business, Finance, Food, Cooking, Entertainment, Sports, Travel, Social Media"
+        />
+        <meta name="author" content="BlogifyBlog" />
+        <meta
+          property="og:title"
+          content="BlogifyBlog - Write For Us"
+        />
+        <meta
+          property="og:description"
+          content="Become a contributor on BlogifyBlog! Share your knowledge and insights on various topics. Explore diverse perspectives and engage with our community. Start your writing journey with BlogifyBlog - Write For Us."
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.blogifyblog.com/write-for-us" />
+        <meta property="og:image" content="https://www.blogifyblog.com/app-image.png" />
+        <meta
+          property="article:tag"
+          content="Education, Technology,  Science, Religious, Health, Fitness, Business, Finance, Food, Cooking, Entertainment, Sports, Travel, Social Media"
+        />
+      </Helmet>
       <Navbar />
       <div className="contact-page">
         <div className="contact">

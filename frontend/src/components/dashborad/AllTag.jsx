@@ -36,7 +36,7 @@ const AllTag = () => {
                 }
             />
             <Helmet>
-                <title>All Tag</title>
+                <title>BlogifyBlog - All Tag</title>
             </Helmet>
             <div className="show-category-action">
                 <div className="numof-search-newAdd">

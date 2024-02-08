@@ -47,7 +47,7 @@
 //                                         <td data-label='No'>1</td>
 //                                         <td data-label='Name'>Sheikh farid</td>
 //                                         <td data-label='Email'>farid@gmail.com</td>
-//                                         <td data-label='Image' className='image'><img src="http://localhost:3000/articalImage/ss.jpeg" alt="" /></td>
+//                                         <td data-label='Image' className='image'><img src="https://ill-tan-tuna-sock.cyclic.app/articalImage/ss.jpeg" alt="" /></td>
 //                                         <td data-label='Action'>
 //                                             {
 //                                                 status === 'block' ? <span className='unsus'>unblock</span> : <span>block</span>
@@ -61,7 +61,7 @@
 //                                         <td data-label='No'>1</td>
 //                                         <td data-label='Name'>Sheikh farid</td>
 //                                         <td data-label='Email'>farid@gmail.com</td>
-//                                         <td data-label='Image' className='image'><img src="http://localhost:3000/articalImage/ss.jpeg" alt="" /></td>
+//                                         <td data-label='Image' className='image'><img src="https://ill-tan-tuna-sock.cyclic.app/articalImage/ss.jpeg" alt="" /></td>
 //                                         <td data-label='Action'>
 //                                             {
 //                                                 status === 'block' ? <span className='unsus'>unblock</span> : <span>block</span>
@@ -75,7 +75,7 @@
 //                                         <td data-label='No'>1</td>
 //                                         <td data-label='Name'>Sheikh farid</td>
 //                                         <td data-label='Email'>farid@gmail.com</td>
-//                                         <td data-label='Image' className='image'><img src="http://localhost:3000/articalImage/ss.jpeg" alt="" /></td>
+//                                         <td data-label='Image' className='image'><img src="https://ill-tan-tuna-sock.cyclic.app/articalImage/ss.jpeg" alt="" /></td>
 //                                         <td data-label='Action'>
 //                                             {
 //                                                 status === 'block' ? <span className='unsus'>unblock</span> : <span>block</span>
@@ -89,7 +89,7 @@
 //                                         <td data-label='No'>1</td>
 //                                         <td data-label='Name'>Sheikh farid</td>
 //                                         <td data-label='Email'>farid@gmail.com</td>
-//                                         <td data-label='Image' className='image'><img src="http://localhost:3000/articalImage/ss.jpeg" alt="" /></td>
+//                                         <td data-label='Image' className='image'><img src="https://ill-tan-tuna-sock.cyclic.app/articalImage/ss.jpeg" alt="" /></td>
 //                                         <td data-label='Action'>
 //                                             {
 //                                                 status === 'block' ? <span className='unsus'>unblock</span> : <span>block</span>
@@ -103,7 +103,7 @@
 //                                         <td data-label='No'>1</td>
 //                                         <td data-label='Name'>Sheikh farid</td>
 //                                         <td data-label='Email'>farid@gmail.com</td>
-//                                         <td data-label='Image' className='image'><img src="http://localhost:3000/articalImage/ss.jpeg" alt="" /></td>
+//                                         <td data-label='Image' className='image'><img src="https://ill-tan-tuna-sock.cyclic.app/articalImage/ss.jpeg" alt="" /></td>
 //                                         <td data-label='Action'>
 //                                             {
 //                                                 status === 'block' ? <span className='unsus'>unblock</span> : <span>block</span>

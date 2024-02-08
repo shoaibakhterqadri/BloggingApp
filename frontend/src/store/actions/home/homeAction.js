@@ -1,7 +1,7 @@
 import axios from 'axios'
 export const get_all_article = (currentPage, searchValue, activeOnly = true) => async (dispatch) => {
     try {
-        const response = await axios.get(`http://localhost:5000/rest-api/home-article-get?currentPage=${currentPage}&&searchValue=${searchValue}`, { withCredentials: true });
+        const response = await axios.get(`https://ill-tan-tuna-sock.cyclic.app/rest-api/home-article-get?currentPage=${currentPage}&&searchValue=${searchValue}`, { withCredentials: true });
         dispatch({
             type: "HOME_ARTICLE_GET_SUCCESS",
             payload: {
@@ -17,7 +17,7 @@ export const get_all_article = (currentPage, searchValue, activeOnly = true) => 
 
 export const get_home_tag_category = () => async (dispatch) => {
     try {
-        const response = await axios.get('http://localhost:5000/rest-api/home/get-tag-category', { withCredentials: true })
+        const response = await axios.get('https://ill-tan-tuna-sock.cyclic.app/rest-api/home/get-tag-category', { withCredentials: true })
         dispatch({
             type: "HOME_CATEGORY_TAG_GET_SUCCESS",
             payload: response.data
@@ -29,7 +29,7 @@ export const get_home_tag_category = () => async (dispatch) => {
 
 export const get_old_recent_acticle = () => async (dispatch) => {
     try {
-        const response = await axios.get('http://localhost:5000/rest-api/article/recent-old-get', { withCredentials: true })
+        const response = await axios.get('https://ill-tan-tuna-sock.cyclic.app/rest-api/article/recent-old-get', { withCredentials: true })
         dispatch({
             type: "GET_OLD_REACT_ATICLE_SUCCESS",
             payload: response.data
@@ -41,7 +41,7 @@ export const get_old_recent_acticle = () => async (dispatch) => {
 
 export const get_category_article = (categorySlug, currentPage) => async (dispatch) => {
     try {
-        const response = await axios.get(`http://localhost:5000/rest-api/category-article-get?categorySlug=${categorySlug}&&currentPage=${currentPage}`, { withCredentials: true })
+        const response = await axios.get(`https://ill-tan-tuna-sock.cyclic.app/rest-api/category-article-get?categorySlug=${categorySlug}&&currentPage=${currentPage}`, { withCredentials: true })
         dispatch({
             type: 'CATEGORY_ARTICLE_GET_SUCCESS',
             payload: {
@@ -57,7 +57,7 @@ export const get_category_article = (categorySlug, currentPage) => async (dispat
 
 export const get_tag_article = (tagSlug, currentPage) => async (dispatch) => {
     try {
-        const response = await axios.get(`http://localhost:5000/rest-api/tag-article-get?tagSlug=${tagSlug}&&currentPage=${currentPage}`, { withCredentials: true })
+        const response = await axios.get(`https://ill-tan-tuna-sock.cyclic.app/rest-api/tag-article-get?tagSlug=${tagSlug}&&currentPage=${currentPage}`, { withCredentials: true })
         dispatch({
             type: 'TAG_ARTICLE_GET_SUCCESS',
             payload: {
@@ -73,8 +73,8 @@ export const get_tag_article = (tagSlug, currentPage) => async (dispatch) => {
 
 export const userView = () => async () => {
     try {
-        await axios.get(`http://localhost:5000/rest-api/user-view`, { withCredentials: true })
+        await axios.get(`https://ill-tan-tuna-sock.cyclic.app/rest-api/user-view`, { withCredentials: true })
     } catch (error) {
-
+console.log("Error getting user view "+ error.message);
     }
 }

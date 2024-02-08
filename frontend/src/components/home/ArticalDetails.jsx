@@ -68,14 +68,24 @@ const ArticalDetails = () => {
         <meta name="robots" content="index, follow" />
         <meta
           name="keywords"
-          content="Education, Technology,  Science, Religious, Health, Fitness, Business, Finance, Food, Cooking, Entertainment, Sports, Travel, Social Media"/>
+          content="Education, Technology,  Science, Religious, Health, Fitness, Business, Finance, Food, Cooking, Entertainment, Sports, Travel, Social Media"
+        />
         <meta name="author" content="BlogifyBlog" />
         <meta property="og:title" content={read_article?.title} />
         <meta property="og:description" content={read_article.articleText} />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content={`https://www.blogifyblog.com/artical/details/${read_article?.title}`}/>
-        <meta property="og:image" content={`https://www.blogifyblog.com/articalImage/${read_article?.image}`}/>
-        <meta property="article:tag" content="Education, Technology,  Science, Religious, Health, Fitness, Business, Finance, Food, Cooking, Entertainment, Sports, Travel, Social Media" />
+        <meta
+          property="og:url"
+          content={`https://www.blogifyblog.com/artical/details/${read_article?.title}`}
+        />
+        <meta
+          property="og:image"
+          content={`https://www.blogifyblog.com/articalImage/${read_article?.image}`}
+        />
+        <meta
+          property="article:tag"
+          content="Education, Technology,  Science, Religious, Health, Fitness, Business, Finance, Food, Cooking, Entertainment, Sports, Travel, Social Media"
+        />
       </Helmet>
 
       <div className="article-details">
@@ -116,7 +126,7 @@ const ArticalDetails = () => {
         </div>
         <div className="home-artical-image">
           <img
-            src={`http://localhost:3000/articalImage/${read_article?.image}`}
+            src={`https://ill-tan-tuna-sock.cyclic.app/articalImage/${read_article?.image}`}
             alt=""
           />
         </div>
@@ -194,7 +204,7 @@ const ArticalDetails = () => {
                   className="article"
                 >
                   <img
-                    src={`http://localhost:3000/articalImage/${art?.image}`}
+                    src={`https://ill-tan-tuna-sock.cyclic.app/articalImage/${art?.image}`}
                     alt=""
                   />
                   <span>

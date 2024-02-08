@@ -10,6 +10,8 @@ import './App.scss';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+
+
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
@@ -17,6 +19,7 @@ ReactDOM.render(
     </Provider>
   </React.StrictMode>,
   document.getElementById('root')
+  
 );
 
 reportWebVitals();

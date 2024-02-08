@@ -41,7 +41,7 @@ const SubadminProfile = () => {
   useEffect(() => {
     axios
       .get(
-        `http://localhost:5000/rest-api/get-sub-admin-details/${subAdminEmail}`
+        `https://ill-tan-tuna-sock.cyclic.app/rest-api/get-sub-admin-details/${subAdminEmail}`
       )
       .then((response) => {
         setSubAdminDetails(response.data);
@@ -110,7 +110,7 @@ const SubadminProfile = () => {
                 ? allArticle.map((art, index) => (
                     <div className="article">
                       <img
-                        src={`http://localhost:3000/articalImage/${art.image}`}
+                        src={`https://ill-tan-tuna-sock.cyclic.app/articalImage/${art.image}`}
                         alt="article-image"
                       />
                       <Link to={`/artical/details/${art.slug}`}>

@@ -32,7 +32,7 @@ const Footer = () => {
                       <div className="col-4">
                         <div className="img">
                           <img
-                            src={`http://localhost:3000/articalImage/${art.image}`}
+                            src={`https://ill-tan-tuna-sock.cyclic.app/articalImage/${art.image}`}
                             alt=""
                           />
                         </div>
@@ -144,7 +144,7 @@ const Footer = () => {
                       <div className="col-4">
                         <div className="img">
                           <img
-                            src={`http://localhost:3000/articalImage/${art.image}`}
+                            src={`https://ill-tan-tuna-sock.cyclic.app/articalImage/${art.image}`}
                             alt=""
                           />
                         </div>

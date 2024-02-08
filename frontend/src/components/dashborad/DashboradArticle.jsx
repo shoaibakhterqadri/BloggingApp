@@ -94,7 +94,7 @@ const DashboradArticle = () => {
               ? allArticle.map((art, index) => (
                   <div className="article" key={index}>
                     <img
-                      src={`http://localhost:3000/articalImage/${art.image}`}
+                      src={`https://ill-tan-tuna-sock.cyclic.app/articalImage/${art.image}`}
                       alt="article-image"
                     />
                     <Link to={`/artical/details/${art.slug}`}>
